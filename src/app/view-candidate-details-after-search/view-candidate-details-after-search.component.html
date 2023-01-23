@@ -1,0 +1,241 @@
+<app-employerside-bar></app-employerside-bar>
+<main class="main_content profilepage">
+    <!-- <app-header></app-header> -->
+    <div *ngIf="route.children.length === 0" class="container-fluid">
+        <div class="container-fluid">
+            <div class="row" style="margin:0px">
+                <div class="col-12">
+                    <h1 style="text-align: center;font-size: 25px ; margin-top: 10px;  color: rgb(171, 15, 15) ">View
+                        Candidate Details
+                    </h1>
+                </div>
+
+                <div class="col-lg-6 col-sm-12 col-xs-12 col-md-12 col-xl-6" style="    margin-left: 10px;">
+                </div>
+                <!-- <div class="col-lg-6 col-sm-12 col-xs-12 col-md-12 col-xl-6">
+              <div class="order_session" style="margin: 12px 0;margin: 12px 0;">
+                <a style="padding: 2px 6px; margin: 10px 5px 10px 0;;margin-left: 73%;" class="btn btn-primary"
+                  [routerLink]="['AdvanceDetailsCandidate']">Edit Advance Details</a>
+              </div>
+            </div> -->
+                <div class="container">
+                    <div class="tab-content" style="margin: 0; padding: 0px;">
+                        <div id="menu0" class="container tab-pane active">
+                            <div class="col-12">
+                                <div class="form_controller">
+                                    <form>
+                                        <div class="table table-fixed" style="max-width: 90%; margin: auto"
+                                            *ngIf="data != null">
+                                            <div>
+                                                <div style="display: flex; justify-content: space-between">
+                                                    <span>
+                                                        <b>keyskill:</b>
+                                                    </span>
+                                                    <span style="width: 60%">:
+                                                        <span *ngFor="let item of data.keyskill">{{item}},</span>
+                                                    </span>
+                                                </div>
+                                                <div style="display: flex; justify-content: space-between">
+                                                    <span>
+                                                        <b>Education:</b>
+                                                    </span>
+                                                    <span style="width: 60%">:{{data.education}}</span>
+                                                </div>
+                                                <!-- <div style="display: flex; justify-content: space-between">
+												<span>
+													<b>It Skill:</b>
+												</span>
+												<span style="width: 60%">:{{data.designation}} </span>
+											</div> -->
+                                                <!-- <div style="display: flex; justify-content: space-between">
+                                                    <span>
+                                                        <b>Employment:</b>
+                                                    </span>
+                                                    <span style="width: 60%">:</span>
+                                                </div> -->
+
+                                                <div style="display: flex; justify-content: space-between">
+                                                    <span>
+                                                        <b>Experience:</b>
+                                                    </span>
+                                                    <span style="width: 60%">:{{data.experienceYear}}Year -
+                                                        {{data.experienceMonth}}Month</span>
+                                                </div>
+
+                                                <div style="display: flex; justify-content: space-between">
+                                                    <span>
+                                                        <b>Mobile Number:</b>
+                                                    </span>
+                                                    <span style="width: 60%">:
+                                                        <span>{{data.candidateregistrations.mobileNumber}}</span>
+                                                    </span>
+                                                </div>
+
+
+
+                                                <div style="display: flex; justify-content: space-between">
+                                                    <span>
+                                                        <b>Salary Range:</b>
+                                                    </span>
+                                                    <span style="width: 60%">:{{data.salaryRangeFrom}} -
+                                                        {{data.salaryRangeTo}}</span>
+                                                </div>
+                                                <div style="display: flex; justify-content: space-between">
+                                                    <span>
+                                                        <b>Location:</b>
+                                                    </span>
+                                                    <span style="width: 60%">:{{data.locationCurrent}}</span>
+                                                </div>
+
+                                                <div style="display: flex; justify-content: space-between">
+                                                    <span>
+                                                        <b>Current skill:</b>
+                                                    </span>
+                                                    <span style="width: 60%">:
+                                                        <span *ngFor="let item of data.currentSkill">{{item}},</span>
+                                                    </span>
+                                                </div>
+
+
+                                                <div style="display: flex; justify-content: space-between">
+                                                    <span>
+                                                        <b>preferred Skill:</b>
+                                                    </span>
+                                                    <span style="width: 60%">:
+                                                        <span *ngFor="let item of data.preferredSkill">{{item}},</span>
+                                                    </span>
+                                                </div>
+
+                                                <!-- <div style="display: flex; justify-content: space-between">
+                                                    <span>
+                                                        <b>Acheivements:</b>
+                                                    </span>
+                                                    <span style="width: 60%">:{{data.workplaceType}}</span>
+                                                </div> -->
+                                                <!-- <div style="display: flex; justify-content: space-between">
+                                                    <span>
+                                                        <b>Job Type:</b>
+                                                    </span>
+                                                    <span style="width: 60%">:{{data.recruiterName}}</span>
+                                                </div>
+                                                <div style="display: flex; justify-content: space-between">
+                                                    <span>
+                                                        <b>Employeement Type:</b>
+                                                    </span>
+                                                    <span style="width: 60%">:{{data.recruiterName}}</span>
+                                                </div> -->
+                                                <div style="display: flex; justify-content: space-between">
+                                                    <span>
+                                                        <b>Gender:</b>
+                                                    </span>
+                                                    <span style="width: 60%">:{{data.gender}}</span>
+                                                </div>
+                                                <div style="display: flex; justify-content: space-between">
+                                                    <span>
+                                                        <b>Marital Status:</b>
+                                                    </span>
+                                                    <span style="width: 60%">:{{data.maritalStatus}}</span>
+                                                </div>
+
+
+                                                <div class="second">
+                                                    <div class="col-md-12 text-center">
+                                                        <form>
+                                                            <button class="btn btn-primary btn-sm" type="submit"
+                                                                (click)="ContactEmail()">Contact Email</button>
+                                                            <button class="btn btn-primary btn-sm" type="submit"
+                                                                (click)="ContactMobile()">Contact Mobile</button>
+
+                                                            <button type="button" class="btn btn-primary "
+                                                                style="margin-left: 10px;float:right"
+                                                                data-bs-toggle="modal" data-bs-target="#exampleModal"
+                                                                (click)="useridGet(data.userId)">
+                                                                Save To Folder
+                                                            </button>
+                                                        </form>
+                                                    </div>
+                                                </div>
+
+                                                <div class="modal fade" id="exampleModal" tabindex="-1"
+                                                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                    <div class="modal-dialog">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header" style="margin-top: 19px;">
+                                                                <h5 class="modal-title" id="exampleModalLabel">
+                                                                    Confirmation</h5>
+                                                                <button type="button" class="btn-close"
+                                                                    data-bs-dismiss="modal" aria-label="Close"></button>
+                                                            </div>
+                                                            <form [formGroup]="PaymentDetails">
+                                                                <div class="modal-body">
+                                                                    <label class="radio-inline">
+                                                                        <input type="radio" name="inlineRadioOptions"
+                                                                            id="inlineRadio1" value="NewFolder"
+                                                                            formControlName="Folder"> New Folder
+                                                                    </label>
+                                                                    <label class="radio-inline">
+                                                                        <input type="radio" name="inlineRadioOptions"
+                                                                            id="inlineRadio2" value="ExistingFolder"(change)="GetSelectedValue($event)"
+                                                                            formControlName="Folder"
+                                                                            style="margin-left: 138px;">Existing Folder 
+                                                                    </label>
+
+                                                                </div>
+
+
+                                                                <div style="display: flex;justify-content: space-between; 
+                                                  margin-left: 10%;"
+                                                                    *ngIf="PaymentDetails.get('Folder')?.value =='NewFolder' ">
+                                                                    <span>
+                                                                        <b>CreateFolder:</b>
+                                                                    </span>
+                                                                    <input type="text" style="    /* margin-left: 50%; */
+                                                  border-radius: 18px;
+                                                  margin-bottom: 12px;
+                                                  margin-right: 109px;" formControlName="folderName">
+
+                                                                </div>
+
+                                                                <div class="form_singlerow" *ngIf="folderNameGet == 'ExistingFolder'
+                                                                && 
+                                                                PaymentDetails.get('Folder')?.value =='ExistingFolder'">
+            <b><label for="selectcategory"> Select Folder:</label></b>
+            <select name="" id="selectcategory" style="margin-right: 70%;    margin-left: 50px;" formControlName="folderName">
+              <option [ngValue]="null" disabled selected>Select Folder</option>
+              <option *ngFor="let detailsData of this.categoryData" value="{{detailsData.folderName}}">{{detailsData.folderName}}
+              </option>
+            </select>
+          </div>
+
+                                                            </form>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-secondary"
+                                                                    data-bs-dismiss="modal">Close</button>
+                                                                <button type="button" class="btn btn-primary"
+                                                                    (click)="SaveToFolder()">Yes</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+                
+            </div>
+        </div>
+    </div>
+</main>

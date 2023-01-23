@@ -1,0 +1,214 @@
+
+
+
+<app-employerside-bar></app-employerside-bar>
+
+<main class="main_content profilepage">
+	<!-- <app-header></app-header> -->
+    <div  class="container-fluid">
+	<div class="container-fluid">
+		<div class="row" style="margin:0px">
+			<div class="col-12">
+				<h1 style="text-align: center;font-size: 25px ; margin-top: 10px;  color: rgb(171, 15, 15) ">
+				</h1>
+			</div>
+
+            <div class="col-lg-6 col-sm-12 col-xs-12 col-md-12 col-xl-6" style="    margin-left: 10px;"> 
+            </div>
+            <!-- <div class="col-lg-6 col-sm-12 col-xs-12 col-md-12 col-xl-6">
+              <div class="order_session" style="margin: 12px 0;margin: 12px 0;">
+                <a style="    padding: 11px 6px;
+				margin: 10px 5px 10px 0;
+				margin-left: 73%;" class="btn btn-primary"
+                  [routerLink]="['EditEmployeeAdvance']">Edit Advance Details</a>
+				  <a style="padding: 0px 28px;
+				  margin: -65px 59px 1px 0;
+				  margin-left: 94%;" class="btn btn-primary"
+                  [routerLink]="['../PostJobEmployee']">Post Job</a>
+              </div> -->
+			  
+            </div>
+			<div class="container">
+				<div class="tab-content" style="margin: 0; padding: 0px;">
+					<div id="menu0" class="container tab-pane active">
+						<div class="col-12">
+							<div class="form_controller">
+								<form>
+									<div class="table table-fixed" style="max-width: 90%; margin: auto" *ngIf="employeedata !=null">
+										<div>
+											<!-- <div style="display: flex; justify-content: space-between">
+												<span>
+													<b>keyskill:</b>
+												</span>
+												<span style="width: 60%" >:
+                                                    <span *ngFor="let item of data.keyskill">{{item}},</span>
+                                                </span>
+											</div> -->
+                                            <div style="display: flex; justify-content: space-between">
+												<span>
+													<b>Job Title:</b>
+												</span>
+												<span style="width: 60%">:
+													<span > {{this.employeedata.jobTittle}}</span>
+												</span>
+											</div>
+											<div style="display: flex; justify-content: space-between">
+												<span>
+													<b>Designation:</b>
+												</span>
+												<span style="width: 60%" >:{{this.employeedata.designation}} </span>
+											</div>
+											<div style="display: flex; justify-content: space-between">
+												<span>
+													<b>Recruiter Name:</b>
+												</span>
+												<span style="width: 60%">: {{this.employeedata.recruiterName}} </span>
+											</div>
+											<div style="display: flex; justify-content: space-between">
+												<span>
+													<b>Mobile Number:</b>
+												</span>
+												<span style="width: 60%" >:{{this.employeedata.contactNumber}}</span>
+											</div>
+                                            
+                                            <div style="display: flex; justify-content: space-between">
+												<span>
+													<b>Job Description:</b>
+												</span>
+												<span style="width: 60%">:{{this.employeedata.jobDescription}}</span>
+											</div>
+                                          
+                                            <div style="display: flex; justify-content: space-between">
+												<span>
+													<b>KeySkills</b>
+												</span>
+												<span style="width: 60%">:
+													<span *ngFor="let item of this.employeedata.keySkill">{{item}},</span>
+												</span>
+												<!-- <span style="width: 60%" *ngFor="let item of this.employeedata.keySkill"> {{item}},</span> -->
+											</div>
+                                            <div style="display: flex; justify-content: space-between">
+												<span>
+													<b>Salary Range From:</b>
+												</span>
+												<span style="width: 60%">:{{this.employeedata.salaryRangeFrom}} - {{this.employeedata.salaryRangeTo}}</span>
+											</div>
+
+                                            <!-- <div style="display: flex; justify-content: space-between">
+												<span>
+													<b>Salary Range To:</b>
+												</span>
+												<span style="width: 60%">:{{this.employeedata.jobDescription}}</span>
+											</div> -->
+
+                                            <div style="display: flex; justify-content: space-between">
+												<span>
+													<b>Qualification:</b>
+												</span>
+												<span style="width: 60%">:{{this.employeedata.educationalQualification}}</span>
+											</div>
+
+                                            <div style="display: flex; justify-content: space-between">
+												<span>
+													<b>Experience:</b>
+												</span>
+												<span style="width: 60%">:{{this.employeedata.experienceFrom}} - {{this.employeedata.experienceTo}}</span>
+											</div>
+
+                                            <!-- <div style="display: flex; justify-content: space-between">
+												<span>
+													<b>Experience To::</b>
+												</span>
+												<span style="width: 60%">:</span>
+											</div> -->
+                                            <div style="display: flex; justify-content: space-between">
+												<span>
+													<b>Interview Type:</b>
+												</span>
+												<span style="width: 60%">:{{this.employeedata.interviewType}}</span>
+											</div>
+                                            <!-- <div style="display: flex; justify-content: space-between">
+												<span>
+													<b>Interview Date:</b>
+												</span>
+												<span style="width: 60%">:</span>
+											</div>
+                                            <div style="display: flex; justify-content: space-between">
+												<span>
+													<b>Interview Time::</b>
+												</span>
+												<span style="width: 60%">:</span>
+											</div>
+                                            <div style="display: flex; justify-content: space-between">
+												<span>
+													<b>Interview Location::</b>
+												</span>
+												<span style="width: 60%">:</span>
+											</div> -->
+                                            <div style="display: flex; justify-content: space-between">
+												<span>
+													<b>Candidate Description:</b>
+												</span>
+												<span style="width: 60%">:{{this.employeedata.candidateDescription}}</span>
+											</div>
+                                            <div style="display: flex; justify-content: space-between">
+												<span>
+													<b>Industry:</b>
+												</span>
+												<span style="width: 60%">:{{this.employeedata.industry}}</span>
+											</div>
+
+                                            <div style="display: flex; justify-content: space-between">
+												<span>
+													<b>Preferred Industry:</b>
+												</span>
+												<span style="width: 60%">:{{this.employeedata.preferredindustry}}</span>
+											</div>
+
+                                            <div style="display: flex; justify-content: space-between">
+												<span>
+													<b>Role:</b>
+												</span>
+												<span style="width: 60%">:{{this.employeedata.role}}</span>
+											</div>
+
+                                            <div style="display: flex; justify-content: space-between">
+												<span>
+													<b>Job Location:</b>
+												</span>
+												<span style="width: 60%">:{{this.employeedata.jobLocation}}</span>
+											</div>
+
+                                            <div style="display: flex; justify-content: space-between">
+												<span>
+													<b>Employment Type</b>
+												</span>
+												<span style="width: 60%">:{{this.employeedata.employmentType}}</span>
+											</div>
+
+                                            <div style="display: flex; justify-content: space-between">
+												<span>
+													<b>No:Of:Openings :</b>
+												</span>
+												<span style="width: 60%">:{{this.employeedata.openings}}</span>
+											</div>
+											<!-- <div style="display: flex; justify-content: space-between">
+												<span>
+													<b>Job Validity :</b>
+												</span>
+												<span style="width: 60%">:{{this.employeedata.validity}} Days</span>
+											</div> -->
+
+                                            
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</main>

@@ -1,0 +1,328 @@
+
+
+
+<div  class="container-fluid">
+    <div class="col-lg-12 mb-2" >
+    <h5 style="text-align: center;color: #d34c4c;    margin-top: 12px;">View After Payments - Admin Side</h5>
+    
+    <div class="table-responsive-sm table_all_orders" style="    width: 78%;
+    overflow-x: auto;
+    margin-left: 10%;">
+      <div class="col-12 mt-3">
+
+      <table class="table table-bordered purchese_order_disign">
+        <thead style="color: #177247;">
+          <tr>
+            <th scope="col">S.no</th>
+            <th scope="col">Company Name</th>
+           
+            <th scope="col">Plan Name</th>
+            <th scope="col">Amount Paid</th>
+            <th scope="col">Payment Date</th>
+            <th scope="col">Status</th>
+            <th scope="col">Action</th>
+            
+          </tr>
+        </thead>
+
+
+        <tbody> 
+            <tr *ngFor="let item of  this.getdata; let i = index" style="font-size: 12px">
+                <td>{{i+1+(10*page)}}</td>
+                <!-- <td>{{item.companyName}}</td> -->
+                <td><button class="btn btn-link" data-bs-toggle="modal" data-bs-target="#exampleModalCentercompany"
+                    (click)="companyNameData(item.companyName,item.companyType,item.email,item.mobileNumber,item.name,item.pincode)">
+                    {{ item.companyName }}
+                  </button></td>
+
+                <!-- <td>{{item.planName}}</td> -->
+                <td><button class="btn btn-link" data-bs-toggle="modal" data-bs-target="#exampleModalCenter"
+                                              (click)="plandata(item.cvAccess,item.jobPost,item.jobPostVAlidity,item.numberOfMassMailer,item.offer,item.validityOfPlan)">
+                                              {{ item.planName }}
+                                            </button>
+                  </td>
+                <!-- <td>{{item.payAmount}}</td> -->
+                <td><button class="btn btn-link" data-bs-toggle="modal" data-bs-target="#exampleModalCenterPayment"
+                    (click)="paymentData(item.cost,item.offer,item.payAmount,item.date,item.cashType)">
+                    {{ item.payAmount }}
+                  </button></td>
+                <td>{{item.date}}</td>
+                <td>{{item.active == false ? 'DeActivate' : item.active == true || item.active == true ? 'Active' : item.active == true }}</td>
+                <td ><button type="button" class="btn btn-success " style="margin-left: 10px"
+                   (click)="OdatApprove(item._id)" [disabled]="item.active == true">
+                  A
+                </button>
+                <button type="button" class="btn btn-danger " style="margin-left: 10px" 
+               (click)="OdataDeactive(item._id)"  [disabled]="item.active == false">
+                D
+              </button></td>
+    
+              </tr> 
+         </tbody> 
+      </table>
+    </div>
+  </div>
+  <div style="display: flex; justify-content: right; align-items: center">
+    <ul class="pagination justify-content-end pageination">
+      <li style="font-size: 12px; padding: 8px 11px; font-weight: bold">
+        {{ pagetotal + "/" + totalcount }}
+      </li>
+      <li class="page-item">
+        <button [disabled]="displaycount == 0 || pagetotal == 0" ngClass="{{
+            displaycount == 0 || pagetotal == 0 ? 'disabeld' : 'active'
+          }}" class="page-link" (click)="pagination(3)">
+          <i class="fa fa-angle-double-left"></i>
+        </button>
+      </li>
+      <li class="page-item">
+        <button [disabled]="displaycount == 0 || pagetotal == 0" ngClass="{{
+            displaycount == 0 || pagetotal == 0 ? 'disabeld' : 'active'
+          }}" class="page-link" (click)="pagination(0)">
+          <i class="fa fa-angle-left"></i>
+        </button>
+      </li>
+      <li class="page-item">
+        <button class="btn btn-primary">{{ page + 1 }}</button>
+      </li>
+      <li class="page-item">
+        <button [disabled]="pagetotal - 1 == displaycount || pagetotal == 0" ngClass="{{
+            pagetotal - 1 == displaycount || pagetotal == 0
+              ? 'disabeld'
+              : 'active'
+          }}" class="page-link" (click)="pagination(1)">
+          <i class="fa fa-angle-right"></i>
+        </button>
+      </li>
+      <li class="page-item">
+        <button [disabled]="pagetotal - 1 == displaycount || pagetotal == 0" ngClass="{{
+            pagetotal - 1 == displaycount || pagetotal == 0
+              ? 'disabeld'
+              : 'active'
+          }}" class="page-link" (click)="pagination(2)">
+          <i class="fa fa-angle-double-right"></i>
+        </button>
+      </li>
+    </ul>
+  </div>
+
+  <div class="modal fade mt-5" id="exampleModalCenter">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" id="exampleModalLabel" style="text-align:center" >
+            <div >Plan Details</div>
+          </h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row" style=" padding-right: 20px"
+            >
+            <div class="table table-fixed" style="max-width: 90%; margin: auto">
+              <div>
+              
+                <div style="display: flex; justify-content: space-between">
+                    <span>
+                      <b>No:Of:CVAccess:</b>
+                    </span>
+                    <span style="width: 60%">:{{this.cvAccess}} </span>
+                  </div>
+
+                  <div style="display: flex; justify-content: space-between">
+                    <span>
+                      <b>No:Of:Job Post:</b>
+                    </span>
+                    <span style="width: 60%">:{{this.jobPost}} </span>
+                  </div>
+
+                  
+
+                  <div style="display: flex; justify-content: space-between">
+                    <span>
+                      <b>No:Of:Mass Mailer:</b>
+                    </span>
+                    <span style="width: 60%">:{{this.numberOfMassMailer}} </span>
+                  </div>
+
+                <div style="display: flex; justify-content: space-between">
+                  <span>
+                    <b>Offer:</b>
+                  </span>
+                  <span style="width: 60%">:{{this.offer}} </span>
+                </div>
+
+                <div style="display: flex; justify-content: space-between">
+                  <span>
+                    <b>Validity Of Plan:</b>
+                  </span>
+                  <span style="width: 60%">:{{this.validityOfPlan}} Days</span>
+                </div>
+                <div style="display: flex; justify-content: space-between">
+                    <span>
+                      <b>Job Post Validity:</b>
+                    </span>
+                    <span style="width: 60%">:{{this.jobPostVAlidity}} Days</span>
+                  </div>
+
+                
+         
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="modal fade mt-5" id="exampleModalCenterPayment">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" id="exampleModalLabel" style="text-align:center" >
+            <div >Payment Details</div>
+          </h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row" style=" padding-right: 20px"
+            >
+            <div class="table table-fixed" style="max-width: 90%; margin: auto">
+              <div>
+              
+                <div style="display: flex; justify-content: space-between">
+                    <span>
+                      <b>Plan Cost:</b>
+                    </span>
+                    <span style="width: 60%">:{{this.cost}} </span>
+                  </div>
+
+                  <div style="display: flex; justify-content: space-between">
+                    <span>
+                      <b>Offer Price:</b>
+                    </span>
+                    <span style="width: 60%">:{{this.offer}} </span>
+                  </div>
+
+                  
+
+                  <div style="display: flex; justify-content: space-between">
+                    <span>
+                      <b>Paid Amount:</b>
+                    </span>
+                    <span style="width: 60%">:{{this.payAmount}} </span>
+                  </div>
+
+                <div style="display: flex; justify-content: space-between">
+                  <span>
+                    <b>Paid Date:</b>
+                  </span>
+                  <span style="width: 60%">:{{this.date}} </span>
+                </div>
+
+
+                <div style="display: flex; justify-content: space-between">
+                    <span>
+                      <b>Payment Method:</b>
+                    </span>
+                    <span style="width: 60%">:{{this.cashType}} </span>
+                  </div>
+
+                
+         
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade mt-5" id="exampleModalCentercompany">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" id="exampleModalLabel" style="text-align:center" >
+            <div >Company Details</div>
+          </h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row" style=" padding-right: 20px"
+            >
+            <div class="table table-fixed" style="max-width: 90%; margin: auto">
+              <div>
+              
+                <div style="display: flex; justify-content: space-between">
+                    <span>
+                      <b>Company Name:</b>
+                    </span>
+                    <span style="width: 60%">:{{this.companyName}} </span>
+                  </div>
+
+                  <div style="display: flex; justify-content: space-between">
+                    <span>
+                      <b>Company Type:</b>
+                    </span>
+                    <span style="width: 60%">:{{this.companyType}} </span>
+                  </div>
+
+                  <div style="display: flex; justify-content: space-between">
+                    <span>
+                      <b>Company Mail Id:</b>
+                    </span>
+                    <span style="width: 60%">:{{this.email }} </span>
+                  </div>
+
+                  <div style="display: flex; justify-content: space-between">
+                    <span>
+                      <b>Contact Name:</b>
+                    </span>
+                    <span style="width: 60%">:{{this.name}} </span>
+                  </div>
+
+                <div style="display: flex; justify-content: space-between">
+                  <span>
+                    <b>Contact Number:</b>
+                  </span>
+                  <span style="width: 60%">:{{this.mobileNumber}} </span>
+                </div>
+                <div style="display: flex; justify-content: space-between">
+                    <span>
+                      <b>Pincode:</b>
+                    </span>
+                    <span style="width: 60%">:{{this.pincode}} </span>
+                  </div>
+
+
+                
+
+                
+         
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+      </div>
+      </div>
+      <router-outlet></router-outlet>
+      
+
+   
+    
+    
+    
+    
+    
+    

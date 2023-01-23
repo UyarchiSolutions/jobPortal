@@ -1,0 +1,167 @@
+
+<app-sidebar></app-sidebar>
+<main class="main_content profilepage">
+	<!-- <app-header></app-header> -->
+    <div *ngIf="route.children.length === 0" class="container-fluid">
+	<div class="container-fluid">
+		<div class="row" style="margin:0px">
+			<div class="col-12">
+				<h1 style="text-align: center;font-size: 25px ; margin-top: 10px;  color: rgb(171, 15, 15) ">My Account - Advance Details
+				</h1>
+			</div>
+
+            <div class="col-lg-6 col-sm-12 col-xs-12 col-md-12 col-xl-6" style="    margin-left: 10px;"> 
+            </div>
+            <div class="col-lg-6 col-sm-12 col-xs-12 col-md-12 col-xl-6">
+              <div class="order_session" style="margin: 12px 0;margin: 12px 0;">
+                <a style="padding: 2px 6px; margin: 10px 5px 10px 0;;margin-left: 73%;" class="btn btn-primary"
+                  [routerLink]="['AdvanceDetailsCandidate']">Edit Advance Details</a>
+              </div>
+            </div>
+			<div class="container">
+				<div class="tab-content" style="margin: 0; padding: 0px;">
+					<div id="menu0" class="container tab-pane active">
+						<div class="col-12">
+							<div class="form_controller">
+								<form>
+									<div class="table table-fixed" style="max-width: 90%; margin: auto" *ngIf="data !=null">
+										<div>
+											<!-- <div style="display: flex; justify-content: space-between">
+												<span>
+													<b>keyskill:</b>
+												</span>
+												<span style="width: 60%" >:
+                                                    <span *ngFor="let item of data.keyskill">{{item}},</span>
+                                                </span>
+											</div> -->
+                                            <div style="display: flex; justify-content: space-between">
+												<span>
+													<b>keyskill:</b>
+												</span>
+												<span style="width: 60%">:
+													<span *ngFor="let item of data.candidateDetails[0].keyskill">{{item}} </span>
+												</span>
+											</div>
+											<div style="display: flex; justify-content: space-between">
+												<span>
+													<b>CurrentSkill:</b>
+												</span>
+												<span style="width: 60%">:
+													<span *ngFor="let itemcurrent of data.candidateDetails[0].currentSkill">{{itemcurrent}} </span>
+												</span>
+												<!-- <span style="width: 60%" *ngFor="let itemcurrent of data.candidateDetails[0].currentSkill">{{itemcurrent}}, </span> -->
+											</div>
+											<div style="display: flex; justify-content: space-between">
+												<span>
+													<b>PreferredSkill:</b>
+												</span>
+												<span style="width: 60%">:
+													<span *ngFor="let itempre of data.candidateDetails[0].preferredSkill">{{itempre}} </span>
+												</span>
+												<!-- <span style="width: 60%"*ngFor="let itempre of data.candidateDetails[0].preferredSkill">{{itempre}},  </span> -->
+											</div>
+											<div style="display: flex; justify-content: space-between">
+												<span>
+													<b>Experience:</b>
+												</span>
+												<span style="width: 60%" >{{data.candidateDetails[0].experienceYear}}year - {{data.candidateDetails[0].experienceMonth}}month</span>
+											</div>
+                                            
+                                            <div style="display: flex; justify-content: space-between">
+												<span>
+													<b>SalaryRange:</b>
+												</span>
+												<span style="width: 60%">{{data.candidateDetails[0].salaryRangeFrom}} - {{data.candidateDetails[0].salaryRangeTo}}</span>
+											</div>
+                                          
+                                            <div style="display: flex; justify-content: space-between">
+												<span>
+													<b>Native Address:</b>
+												</span>
+												<span style="width: 60%">:{{data.candidateDetails[0].locationNative}}</span>
+											</div>
+                                            <div style="display: flex; justify-content: space-between">
+												<span>
+													<b>Current Address:</b>
+												</span>
+												<span style="width: 60%">:{{data.candidateDetails[0].locationCurrent}}</span>
+											</div>
+
+                                            <div style="display: flex; justify-content: space-between">
+												<span>
+													<b>Education:</b>
+												</span>
+												<span style="width: 60%">:{{data.candidateDetails[0].education}}</span>
+											</div>
+
+                                            <div style="display: flex; justify-content: space-between">
+												<span>
+													<b>Specification:</b>
+												</span>
+												<span style="width: 60%">:{{data.candidateDetails[0].specification}}</span>
+											</div>
+
+                                            <div style="display: flex; justify-content: space-between">
+												<span>
+													<b>University:</b>
+												</span>
+												<span style="width: 60%">:{{data.candidateDetails[0].university}}</span>
+											</div>
+
+                                            <div style="display: flex; justify-content: space-between">
+												<span>
+													<b>CourseType:</b>
+												</span>
+												<span style="width: 60%">:{{data.candidateDetails[0].courseType}}</span>
+											</div>
+                                            <div style="display: flex; justify-content: space-between">
+												<span>
+													<b>PassingYear:</b>
+												</span>
+												<span style="width: 60%">:{{data.candidateDetails[0].passingYear}}</span>
+											</div>
+                                            <div style="display: flex; justify-content: space-between">
+												<span>
+													<b>GradingSystem:</b>
+												</span>
+												<span style="width: 60%">:{{data.candidateDetails[0].gradingSystem}} - {{data.candidateDetails[0].mark}}</span>
+											</div>
+                                            <div style="display: flex; justify-content: space-between">
+												<span>
+													<b>Availability:</b>
+												</span>
+												<span style="width: 60%">:{{data.candidateDetails[0].availability}}</span>
+											</div>
+                                            <div style="display: flex; justify-content: space-between">
+												<span>
+													<b>Gender:</b>
+												</span>
+												<span style="width: 60%">:{{data.candidateDetails[0].gender}}</span>
+											</div>
+                                            <div style="display: flex; justify-content: space-between">
+												<span>
+													<b>MaritalStatus:</b>
+												</span>
+												<span style="width: 60%">:{{data.candidateDetails[0].maritalStatus}}</span>
+											</div>
+
+											<div style="display: flex; justify-content: space-between">
+												<span>
+													<b>Profile Picture:</b>
+												</span>
+												<img style="    width: 223px;" src="{{baseurl+ '/' + data.candidateDetails[0].image}}" >
+											</div>
+											
+                                            
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</main>

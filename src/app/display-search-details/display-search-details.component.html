@@ -1,0 +1,102 @@
+<app-employerside-bar></app-employerside-bar>
+<div  class="container-fluid">
+    <div class="col-lg-12 mb-2" >
+    <h5 style="text-align: center;color: #d34c4c;    margin-top: 12px;">Candidates Details </h5>
+    
+    <div class="table-responsive-sm table_all_orders" style="    width: 78%;
+    overflow-x: auto;
+    margin-left: 20%;">
+    <div class="form-check justify-content-center mb-4">
+      <button
+        type="button"
+        class="btn btn-success btn-block mb-4"
+        style="/* float: right; */ width: 9%; margin-left: 34%" (click)="savecandidate()" [disabled]="arr.length == '0'">Save
+      </button>
+
+    </div>
+      <div class="col-12 mt-3">
+
+      <table class="table table-bordered purchese_order_disign">
+        <thead style="color: #177247;">
+          <tr>
+            <th scope="col">Select</th>
+            <th scope="col">Candidate Name</th>
+            <th scope="col">Resume</th>
+            <th scope="col">WorkStatus</th>
+            <th scope="col">View Deatils</th>
+            
+          </tr>
+        </thead>
+
+
+        <tbody> 
+            <tr *ngFor="let item of  this.getdata; let i = index" style="font-size: 12px">
+              <td > <input class="form-check-input" type="checkbox"
+                (change)="getCheckedData($event,item,item._id)" id="flexCheckDefault">
+            </td>
+                <td>{{item.candidateregistrations.name}}</td>
+                <td>{{item.candidateregistrations.resume}}</td>
+                <td>{{item.candidateregistrations.workStatus}}</td>
+                <td>
+                  <a style="margin-right: 13px;" [routerLink]="['../ViewCandidateDetailsAfterSearch']"
+                    [queryParams]="{ id: item._id }" (click)="CvCount(item.userId,item.data)">View</a>
+                </td>
+              </tr> 
+         </tbody> 
+      </table>
+    </div>
+  </div>
+  <!-- <div style="display: flex; justify-content: right; align-items: center">
+    <ul class="pagination justify-content-end pageination">
+      <li style="font-size: 12px; padding: 8px 11px; font-weight: bold">
+        {{ pagetotal + "/" + totalcount }}
+      </li>
+      <li class="page-item">
+        <button [disabled]="displaycount == 0 || pagetotal == 0" ngClass="{{
+            displaycount == 0 || pagetotal == 0 ? 'disabeld' : 'active'
+          }}" class="page-link" (click)="pagination(3)">
+          <i class="fa fa-angle-double-left"></i>
+        </button>
+      </li>
+      <li class="page-item">
+        <button [disabled]="displaycount == 0 || pagetotal == 0" ngClass="{{
+            displaycount == 0 || pagetotal == 0 ? 'disabeld' : 'active'
+          }}" class="page-link" (click)="pagination(0)">
+          <i class="fa fa-angle-left"></i>
+        </button>
+      </li>
+      <li class="page-item">
+        <button class="btn btn-primary">{{ page + 1 }}</button>
+      </li>
+      <li class="page-item">
+        <button [disabled]="pagetotal - 1 == displaycount || pagetotal == 0" ngClass="{{
+            pagetotal - 1 == displaycount || pagetotal == 0
+              ? 'disabeld'
+              : 'active'
+          }}" class="page-link" (click)="pagination(1)">
+          <i class="fa fa-angle-right"></i>
+        </button>
+      </li>
+      <li class="page-item">
+        <button [disabled]="pagetotal - 1 == displaycount || pagetotal == 0" ngClass="{{
+            pagetotal - 1 == displaycount || pagetotal == 0
+              ? 'disabeld'
+              : 'active'
+          }}" class="page-link" (click)="pagination(2)">
+          <i class="fa fa-angle-double-right"></i>
+        </button>
+      </li>
+    </ul>
+  </div> -->
+      </div>
+      </div>
+      <router-outlet></router-outlet>
+      
+
+   
+    
+    
+    
+    
+    
+    

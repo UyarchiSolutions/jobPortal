@@ -1,0 +1,71 @@
+<!-- <div class="header">
+    <div class="container">
+        <div class="row">
+            <div class="col-8">
+                <div class="header-plan-list">
+                  <p class="treatJobs">TreatJobs     JobBuzz</p>
+                 
+                 
+                </div>
+                <div class="headerplancontainer">
+                    <img src="../../assets/Mask group.png">
+        
+                </div>
+              </div>
+        </div>
+
+    </div>
+
+</div> -->
+<div class="header">
+    <div class="container">
+        <div class="row">
+            <div class="col-8">
+                <div class="primary-menus">
+                    <ol>
+                        <li><a class="active-menu">Home</a></li>
+                        <li>
+                            <div class="dropdown dropdown-menu-end">
+                                <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown">
+                                    Services
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Link 1</a></li>
+                                    <li><a class="dropdown-item" href="#">Link 2</a></li>
+                                    <li><a class="dropdown-item" href="#">Link 3</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li><a>Jobs</a></li>
+                        <li><a>About Us</a></li>
+                        <li><a>Companies</a></li>
+                    </ol>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="group_button">
+                    <ol>
+                        <li class="login-button active-button"><button [routerLink]="['login']">Login</button></li>
+                        <li class="register-button"><button [routerLink]="['CandidateRegistration']">Register</button></li>
+                        <li class="register-button"><button (click)="logout()">Log Out</button></li>
+                        <li class="condidate-botton">
+                            <div class="dropdown dropdown-menu-end">
+                                <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown">
+                                    For Candidate
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" (click)="employee($event)" routerLink="/employeerLogin">For Employer</a></li>
+                                    <li><a class="dropdown-item" (click)="admin($event)" routerLink="/AdminLogin">For Admin</a></li>
+                                   
+                                </ul>
+                            </div>
+                           
+                        </li>
+                        
+
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

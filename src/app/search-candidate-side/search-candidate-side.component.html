@@ -1,0 +1,325 @@
+<!-- <app-sidebar></app-sidebar> -->
+<!-- <div class="bottom">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-2">
+        <div class="plan-list">
+          <p class="planlistinner">Plan List</p>
+        </div>
+        <div class="plancontainer">
+
+
+        </div>
+      </div>
+
+      <div class="col-8">
+        <div class="palncontanier">
+        
+        </div>
+        <div class="planlistcontainerinner">
+          <img src="../../assets/Mask group.png">
+        </div>
+        <div class="search-container">
+          <form [formGroup]="SearchFormCandidate">
+            <input type="text" class="search" placeholder="Enter Designation" formControlName="search">
+            <input type="text" class="date-from" placeholder="Enter Location" formControlName="location">
+    
+
+            <select id="year" name="year" class="date-to" formControlName="experience" style="margin-left: 11px;">
+              <option [ngValue]="null" disabled selected class="date-to" >Experience</option>
+              <option value="00">Fresher </option>
+              <option value="1">1 Year</option>
+              <option value="2">2 Year</option>
+              <option value="3">3 Year</option>
+              <option value="4">4 Year</option>
+              <option value="5">5 Year</option>
+              <option value="6">6 Year</option>
+              <option value="7">7 Year</option>
+              <option value="8">8 Year</option>
+              <option value="9">9 Year</option>
+              <option value="10">10 Year</option>
+              <option value="11">11 Year</option>
+              <option value="12">12 Year</option>
+              <option value="13">13 Year</option>
+              <option value="14">14 Year</option>
+              <option value="15">15 Year</option>
+              <option value="16">16 Year</option>
+              <option value="17">17 Year</option>
+              <option value="18">18 Year</option>
+              <option value="19">19 Year</option>
+              <option value="20">20 Year</option>
+              <option value="21">21 Year</option>
+              <option value="22">22 Year</option>
+              <option value="23">23 Year</option>
+              <option value="24">24 Year</option>
+              <option value="25">25 Year</option>
+              <option value="26">26 Year</option>
+            </select>
+
+            <button class="aaaaa" type="submit" (click)="getpostedJobDetails()"><i class="fa fa-search"></i></button>
+         
+          </form>
+        </div>
+      </div>
+      <div class="col-2">
+        <div class="plan-list2">
+          <p class="planlistinner2">Plan List</p>
+        </div>
+      </div>
+    
+      <div class="col-2">
+        <div class="all-filter">
+          <p class="all-filter-para">All Filter</p>
+        </div>
+        <div class="filterContainer">
+          <label class="work-mode">Work Mode</label>
+          <div class="radiofor3">
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+              <label class="form-check-label" for="flexRadioDefault1">
+                Regular
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+              <label class="form-check-label" for="flexRadioDefault2">
+                Work From Home
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+              <label class="form-check-label" for="flexRadioDefault2">
+                Hybrid
+              </label>
+            </div>
+          </div>
+          <div class="horizontalline">
+
+          </div>
+
+     
+
+          <label class="work-modeeligibility">Eligibility</label>
+          <div class="radiofor3">
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+              <label class="form-check-label" for="flexRadioDefault1">
+                Diploma
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+              <label class="form-check-label" for="flexRadioDefault2">
+                UG
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+              <label class="form-check-label" for="flexRadioDefault2">
+                PG
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+              <label class="form-check-label" for="flexRadioDefault2">
+                Ph.D
+              </label>
+            </div>
+          </div>
+          <div class="horizontalline">
+
+
+          </div>
+          
+
+          <label class="work-modesalary">Salary</label>
+          <div class="radiofor3">
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+              <label class="form-check-label" for="flexRadioDefault1">
+                0 to 2 lacs
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+              <label class="form-check-label" for="flexRadioDefault2">
+                2 to 6 lacs
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+              <label class="form-check-label" for="flexRadioDefault2">
+                6 to 8 lacs
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+              <label class="form-check-label" for="flexRadioDefault2">
+                More Than 10 lacs
+              </label>
+            </div>
+          </div>
+        </div>
+        </div>
+
+        <div class="col-8">
+          <div class="job-found">
+            <p class="jobs-found-para">500+ Jobs Found</p>
+          </div>
+          <div class="jobFoundContainer">
+            <table class="table-data" style="    width: 100%;">
+              <thead class="table-head-color">
+                <tr class="table-heAd-size">
+                  <th scope="col"><img src="../../assets/Group 284.png" alt="Girl in a jacket" class="imageth">Company
+                  </th>
+                  <th scope="col"><img src="../../assets/Group 359.png" alt="Girl in a jacket"
+                      class="imageth">Designation</th>
+                  <th scope="col"><img src="../../assets/Group 7.png" alt="Girl in a jacket" class="imageth">City</th>
+                  <th scope="col"><img src="../../assets/Group 4.png" alt="Girl in a jacket" class="imageth">Experience
+                  </th>
+                  <th scope="col"><img src="../../assets/Group 9.png" alt="Girl in a jacket" class="imageth">Salary</th>
+                </tr>
+              </thead>
+
+              <tbody class="table-body">
+                <tr *ngFor="let item of tableData; let i=index">
+                  <td class="companydata">{{item.employerregistrations.companyName}}</td>
+                  <td class="companydata">{{item.designation}}</td>
+                  <td class="companydata">{{item.jobLocation}}</td>
+                  <td class="companydata">{{item.experienceFrom}} - {{item.experienceTo}}</td>
+                  <td class="companydata">{{item.salaryRangeFrom}} - {{item.salaryRangeTo}}</td>
+                </tr>
+                
+                
+      
+              </tbody>
+
+            </table>
+
+          </div>
+        </div>
+        <div class="col-2">
+          <div class="similar-job">
+            <p class="similar-job-para">Similar Jobs</p>
+          </div>
+          <div class="similarjobcontainer">
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+
+
+  
+<app-sidebar></app-sidebar>
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+
+<div class="topnav">
+
+  <div class="container"  style="    margin-right: 35px;">
+    <form [formGroup]="SearchFormCandidate">
+    
+      <div class="wrapper">
+   
+        <div class="search-container">
+          <input type="text" class="search" placeholder="Search Job"  formControlName="search">
+          
+          <input type="text" class="date-from" placeholder="Experience" formControlName="experience">
+          <input type="text" class="date-to" placeholder="Location" formControlName="location">
+          <button type="submit" class="button" (click)="getpostedJobDetails()">Search</button>
+        </div>
+        <div class="row align-items-start">
+          <span style="color: red;
+          text-align: center;
+          overflow: auto;
+          margin-left: -42%;
+          margin-bottom: 14px;"
+              *ngIf="formsubmited && SearchFormCandidate.get('search')?.invalid">Enter
+              the KeySkill</span>
+         </div>
+      </div>
+    </form>
+    </div>
+</div>
+<div style="    margin-left: 22%;
+margin-right: 10%;">
+    <div>
+      <h4 style="text-align: center;    color: darkred;"></h4>
+    </div>
+    <div class="table-responsive-sm table_all_orders" style="width: 100%;overflow-x: auto;">
+      <table class="table table-bordered purchese_order_disign">
+        <thead style=" color: green;">
+          <tr>
+            <th scope="col">S.No</th>
+            <th scope="col">Posted Date</th>
+            <th scope="col">Designation</th>
+            <th scope="col">Company Name</th>
+            <th scope="col">Location</th>
+            <th scope="col">More Details</th>
+          </tr>
+        </thead>
+        <tbody >
+          <tr *ngFor="let item of tableData; let i=index">
+            <td >{{ i + 1 + 10 * page }}</td>
+            <td >{{item.createdAt |date: 'dd-MM-YYYY'}}</td>
+            <td>{{item.designation}}</td>
+            <td >{{item.employerregistrations.companyName}}</td>
+            <td >{{item.jobLocation}}</td>
+            <td>
+                <a style="margin-right: 13px;" [queryParams]="{ id: item._id,userid: item.userId }" [routerLink]="['CandidateDisplaySearchJob']">ViewDeatils</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div style="display: flex; justify-content: right; align-items: center">
+    <ul class="pagination justify-content-end pageination">
+      <li style="font-size: 12px; padding: 8px 11px; font-weight: bold">
+        {{ pagetotal + "/" + totalcount }}
+      </li>
+      <li class="page-item">
+        <button [disabled]="displaycount == 0 || pagetotal == 0" ngClass="{{
+            displaycount == 0 || pagetotal == 0 ? 'disabeld' : 'active'
+          }}" class="page-link" (click)="pagination(3)">
+          <i class="fa fa-angle-double-left"></i>
+        </button>
+      </li>
+      <li class="page-item">
+        <button [disabled]="displaycount == 0 || pagetotal == 0" ngClass="{{
+            displaycount == 0 || pagetotal == 0 ? 'disabeld' : 'active'
+          }}" class="page-link" (click)="pagination(0)">
+          <i class="fa fa-angle-left"></i>
+        </button>
+      </li>
+      <li class="page-item">
+        <button class="btn btn-primary">{{ page + 1 }}</button>
+      </li>
+      <li class="page-item">
+        <button [disabled]="pagetotal - 1 == displaycount || pagetotal == 0" ngClass="{{
+            pagetotal - 1 == displaycount || pagetotal == 0
+              ? 'disabeld'
+              : 'active'
+          }}" class="page-link" (click)="pagination(1)">
+          <i class="fa fa-angle-right"></i>
+        </button>
+      </li>
+      <li class="page-item">
+        <button [disabled]="pagetotal - 1 == displaycount || pagetotal == 0" ngClass="{{
+            pagetotal - 1 == displaycount || pagetotal == 0
+              ? 'disabeld'
+              : 'active'
+          }}" class="page-link" (click)="pagination(2)">
+          <i class="fa fa-angle-double-right"></i>
+        </button>
+      </li>
+    </ul>
+  </div>
+</body>
+</html>

@@ -1,0 +1,135 @@
+
+<app-admin-side-bar></app-admin-side-bar>
+<div class="container-fluid">
+    <div class="row" style="margin: 0px">
+        <div class="col-12">
+            <h4 style="text-align: center; font-size: 19px; margin-top: 10px;    color: #a70a0a;">
+               Create Plan For Employeer
+            </h4>
+        </div>
+
+
+        <div class="tab-content" style="margin: 0; padding: 0px">
+            <div #page1 id="menu0" class="container tab-pane active">
+                <br />
+                <div class="col-12">
+                    <div class="form_controller">
+                        <form [formGroup]="craetePlanForm">
+                            <div class="row">
+                                <div class="form_singlerow" >
+                                    <label for="categoryImage">Name Of Plan: <span class="required">*</span></label>
+                                    <input type="text" id="categoryImage" formControlName="planName"  >
+                                </div>
+                                <!-- <div class="form_singlerow">
+                                    <label for="selectstreet">Name Of Plan:</label>
+                                <select id="year" name="year" formControlName="planName" style="    margin-left: 60px;" >
+                                    <option [ngValue]="null" disabled selected>Select</option>
+                                    <option value="Gold">Gold</option>
+                                    <option value="Silver">Silver</option>
+                                    <option value="Bronze">Bronze</option>
+                                </select>
+                            </div> -->
+                                <div class="row align-items-start">
+                                    <span style=" color: red;
+                                    text-align: center;
+                                    margin-left: 32px;
+                                    margin-top: -11px;"
+                                        *ngIf="formsubmited && craetePlanForm.get('planName')?.invalid">Enter
+                                        the Plan Name</span>
+                                </div>
+                                <div class="form_singlerow" >
+                                    <label for="categoryImage">No:of: Job Post : <span class="required">*</span></label>
+                                    <input type="text" id="categoryImage" formControlName="jobPost"  onkeypress="return event.keyCode === 8 || event.charCode >= 48 && event.charCode <= 57"
+                                     >
+                                </div>
+                                <div class="row align-items-start">
+                                    <span style=" color: red;
+                                    text-align: center;
+                                    margin-left: 29px;
+                                    margin-top: -11px;"
+                                        *ngIf="formsubmited && craetePlanForm.get('jobPost')?.invalid">Enter
+                                        the Job Post</span>
+                                </div>
+                                <div class="form_singlerow">
+                                    <label for="categoryImage">No:of: CV Access : <span class="required">*</span></label>
+                                    <input type="text" id="categoryImage" formControlName="cvAccess" onkeypress="return event.keyCode === 8 || event.charCode >= 48 && event.charCode <= 57">
+                                </div>
+                                <div class="row align-items-start">
+                                    <span style=" color: red;
+                                    text-align: center;
+                                    margin-left: 29px;
+                                    margin-top: -11px;"
+                                        *ngIf="formsubmited && craetePlanForm.get('cvAccess')?.invalid">Enter
+                                        the CV Access</span>
+                                </div>
+
+                                <div class="form_singlerow">
+                                    <label for="categoryImage">No:of: Mass Mailers : <span class="required">*</span></label>
+                                    <input type="text" id="categoryImage" formControlName="numberOfMassMailer" onkeypress="return event.keyCode === 8 || event.charCode >= 48 && event.charCode <= 57">
+                                </div>
+                                <div class="row align-items-start">
+                                    <span style=" color: red;
+                                    text-align: center;
+                                    margin-left: 38px;
+                                    margin-top: -11px;"
+                                        *ngIf="formsubmited && craetePlanForm.get('numberOfMassMailer')?.invalid">Enter
+                                        the Mass Mailers</span>
+                                </div>
+                                <div class="form_singlerow">
+                                    <label for="categoryImage">Cost: <span class="required">*</span></label>
+                                    <input type="text" id="categoryImage" formControlName="cost" onkeypress="return event.keyCode === 8 || event.charCode >= 48 && event.charCode <= 57">
+                                </div>
+                                <div class="row align-items-start">
+                                    <span style=" color: red;
+                                    text-align: center;
+                                    margin-left: 10px;
+                                    margin-top: -11px;"
+                                        *ngIf="formsubmited && craetePlanForm.get('cost')?.invalid">Enter
+                                        the Cost</span>
+                                </div>
+                                <div class="form_singlerow">
+                                    <label for="categoryImage">Offer: <span class="required">*</span></label>
+                                    <input type="text" id="categoryImage" formControlName="offer" onkeypress="return event.keyCode === 8 || event.charCode >= 48 && event.charCode <= 57">
+                                </div>
+                                <div class="row align-items-start">
+                                    <span style=" color: red;
+                                    text-align: center;
+                                    margin-left: 10px;
+                                    margin-top: -11px;"
+                                        *ngIf="formsubmited && craetePlanForm.get('offer')?.invalid">Enter
+                                        the Offer</span>
+                                </div>
+                                <div class="form_singlerow">
+                                    <label for="categoryImage">Validity Of Plan (Days): <span class="required">*</span></label>
+                                    <input type="text" id="categoryImage" formControlName="validityOfPlan" onkeypress="return event.keyCode === 8 || event.charCode >= 48 && event.charCode <= 57">
+                                </div>
+                                <div class="row align-items-start">
+                                    <span style=" color: red;
+                                    text-align: center;
+                                    margin-left: 46px;
+                                    margin-top: -11px;"
+                                        *ngIf="formsubmited && craetePlanForm.get('validityOfPlan')?.invalid">Enter
+                                        the validity Of Plan</span>
+                                </div>
+                                <div class="form_singlerow">
+                                    <label for="categoryImage">Job Post Validity (Days): <span class="required">*</span></label>
+                                    <input type="text" id="categoryImage" formControlName="jobPostVAlidity" onkeypress="return event.keyCode === 8 || event.charCode >= 48 && event.charCode <= 57">
+                                </div>
+                                <div class="row align-items-start">
+                                    <span style=" color: red;
+                                    text-align: center;
+                                    margin-left: 46px;
+                                    margin-top: -11px;"
+                                        *ngIf="formsubmited && craetePlanForm.get('jobPostVAlidity')?.invalid">Enter
+                                        the jobPost Validity</span>
+                                </div>
+                                <button style="padding: 0px 6px; margin-left: 41%; width: 80px;margin-top: 20px"
+                                    class="btn btn-primary" (click)="submit()">Create Plan</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

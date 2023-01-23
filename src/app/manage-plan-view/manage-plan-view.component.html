@@ -1,0 +1,130 @@
+
+<app-admin-side-bar></app-admin-side-bar>
+<div  class="container-fluid">
+    <div class="col-lg-12 mb-2" >
+    <h5 style="text-align: center;color: #d34c4c;    margin-top: 12px;">Manage Plan</h5>
+    
+    <div class="col-lg-6 col-sm-12 col-xs-12 col-md-12 col-xl-6">
+      <div class="order_session" style="margin: 12px 0;margin: 12px 0;">
+        <a style="    padding: 11px 6px;
+        margin: 10px 5px 10px 0;
+        margin-left: 34%;
+        margin-top: -2px;   " class="btn btn-primary"
+          [routerLink]="['../CreatePlanJobt']">Add Plan</a>
+     
+      </div>
+
+    </div>
+    <div class="table-responsive-sm table_all_orders" style="    width: 78%;
+    overflow-x: auto;
+    margin-left: 10%;    margin-left: 17%;">
+      <div class="col-12 mt-3">
+
+      <table class="table table-bordered purchese_order_disign">
+        <thead style="color: #177247;">
+          <tr>
+            <th scope="col">S:no</th>
+            <th scope="col">Plan Created Date</th>
+            <th scope="col">Plan Name</th>
+            <th scope="col">Cost</th>
+            <th scope="col">No:of:Post</th>
+            <th scope="col">No:of:CV Access</th>
+            <th scope="col">Status</th>
+            <th scope="col">Action </th>
+          </tr>
+        </thead>
+        <tbody >
+            <tr *ngFor="let item of plandata; let i=index">
+              <td>{{i+1}}</td>
+              <td>{{item.createdAt|date:'YYYY-MM-dd'}}</td>
+              <td>
+                <button class="btn btn-link" data-bs-toggle="modal" data-bs-target="#exampleModalCenter"
+                (click)="shopdata(item.planName,item.offer,item.validityOfPlan,item.validityOfPlanExpiry,item.jobPostVAlidityExpiry,item.jobPostVAlidity,item.numberOfMassMailer,item.cost)">
+                {{ item.planName }}
+              </button>
+                 <!-- <button type="button" class="btn btn-success " style="margin-left: 10px" 
+               (click)="OdatActive(item.planId)" >
+               {{item.planName}}
+             </button> -->
+              </td>
+              <td>{{item.cost}}</td>
+              <td>{{item.jobPost}}</td>
+              <td>{{item.cvAccess}}</td>
+              <td >{{item.active == false ? 'DeActivate' : item.active == true || item.active == true ? 'Active' : item.active == true }}</td>
+              <td ><button type="button" class="btn btn-success " style="margin-left: 10px" 
+               (click)="OdatActive(item.planId)" [disabled]="item.active == true">
+               A
+             </button>
+             <button type="button" class="btn btn-danger " style="margin-left: 10px" 
+            (click)="OdataDisable(item.planId)" [disabled]="item.active == false">
+             D
+           </button>
+       
+         
+        </td>
+            </tr>
+          </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="modal fade mt-5" id="exampleModalCenter">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" id="exampleModalLabel" style="text-align:center" >
+            <div >{{ this.planName}}</div>
+          </h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row" style=" padding-right: 20px"
+            >
+            <div class="table table-fixed" style="max-width: 90%; margin: auto">
+              <div>
+                <div style="display: flex; justify-content: space-between">
+                  <span>
+                    <b>No:Of:MassMailer:</b>
+                  </span>
+                  <span style="width: 60%">:{{this.numberOfMassMailer}} </span>
+                </div>
+                <div style="display: flex; justify-content: space-between">
+                  <span>
+                    <b>validity Of Plan:</b>
+                  </span>
+                  <span style="width: 60%">:{{this.validityOfPlan}} Days</span>
+                </div>
+                <div style="display: flex; justify-content: space-between">
+                  <span>
+                    <b>Job Post Validity:</b>
+                  </span>
+                  <span style="width: 60%">:{{this.jobPostVAlidity}} Days</span>
+                </div>
+                <div style="display: flex; justify-content: space-between">
+                  <span>
+                    <b>Offer Price:</b>
+                  </span>
+                  <span style="width: 60%">:{{this.offer}} Rupees</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+      </div>
+      </div>
+      <router-outlet></router-outlet>
+      
+
+   
+    
+    
+    
+    
+    
+    

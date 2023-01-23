@@ -1,0 +1,77 @@
+
+<div class="container-fluid">
+    <div class="row" style="margin: 0px">
+        <div class="col-12">
+            <h4 style="text-align: center; font-size: 19px; margin-top: 10px;    color: #a70a0a;">Admin Registration
+            </h4>
+        </div>
+
+
+        <div class="tab-content" style="margin: 0; padding: 0px">
+            <div #page1 id="menu0" class="container tab-pane active">
+                <br />
+                <div class="col-12">
+                    <div class="form_controller">
+                        <form [formGroup]="Adminform">
+                            <div class="row">
+                                <!-- name -->
+                                <div class="form_singlerow">
+                                    <label for="categoryImage">Name: <span class="required">*</span></label>
+                                    <input type="text" id="categoryImage" formControlName="name" min="1" step="1"
+                                        maxlength="50" ng-pattern="/^[a-zA-Z\s]*$/" />
+                                </div>
+                                <div class="row align-items-start">
+                                    <span style="color: red;text-align:center;margin-left: 30px;margin-bottom: 14px;"
+                                        *ngIf="formsubmited && Adminform.get('name')?.invalid">Enter
+                                        the name</span>
+                                </div>
+
+                                <div class="form_singlerow">
+                                    <label for="categoryImage">Email: <span class="required">*</span></label>
+                                    <input type="text" id="categoryImage" formControlName="email" min="1" step="1"
+                                        maxlength="50"  />
+                                </div>
+                                <div class="row align-items-start">
+                                    <span style="color: red;text-align:center;margin-left: 30px;margin-bottom: 14px;"
+                                        *ngIf="formsubmited && Adminform.get('email')?.invalid">Enter
+                                        the Email</span>
+                                </div>
+                           
+                                <!-- password -->
+                                <div class="form_singlerow">
+                                    <label for="categoryImage">Password: <span class="required">*</span></label>
+                                    <input type="password" id="categoryImage" formControlName="password">
+                                </div>
+                                <div class="row align-items-start">
+                                    <span style="color: red;text-align:center;margin-left: 44px;margin-bottom: 14px;"
+                                        *ngIf="formsubmited && Adminform.get('password')?.invalid">Enter
+                                        the password</span>
+                                </div>
+                                <p class="form-label error-message" *ngIf="isdisplay"
+                                for="form3Example4" style="color: red;    margin-left: 174px;">Password Must Be 8 characters</p>
+                                <p class="form-label error-message" *ngIf="isdisplay"
+                                for="form3Example4" style="color: red;    margin-left: 174px;">Password Must Be 1 letter</p>
+                                <p class="form-label error-message" *ngIf="isdisplay"
+                                for="form3Example4" style="color: red;    margin-left: 174px;">Password Must Be 1 number</p>
+                                <!-- Confirm Password -->
+                                <div class="form_singlerow">
+                                    <label for="categoryImage">Confirm Password: <span class="required">*</span></label>
+                                    <input type="password" id="categoryImage" formControlName="confirmpassword">
+                                </div>
+                                <div class="row align-items-start">
+                                    <span style="color: red;text-align:center;margin-left: 88px;margin-bottom: 14px;"
+                                        *ngIf="formsubmited && Adminform.get('confirmpassword')?.invalid || formsubmited && Adminform.get('password')?.value !=Adminform.get('confirmpassword')?.value">Enter
+                                        the valid Confirm Password</span>
+                                </div>
+
+                                
+                                <button style="padding: 0px 6px; margin-left: 41%; width: 80px;margin-top: 20px"
+                                    class="btn btn-primary" (click)="submit()">Register</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

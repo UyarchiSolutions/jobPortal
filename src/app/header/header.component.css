@@ -1,0 +1,127 @@
+/* .header {
+
+    position: absolute;
+width: 2045px;
+height: 50px;
+left: 0px;
+top: 0px;
+
+background: #FFFFFF;
+}
+.treatJobs{
+   
+    width: 400px;
+    height: 36px;
+    left: 147px;
+    top: 10px;
+    
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 36px;
+
+    
+    
+    color: #000000;
+    
+}
+.headerplancontainer{
+    position: absolute;
+width: 2044px;
+height: 110px;
+left: 0px;
+top: 50px;
+
+background: rgba(44, 116, 179, 0.1);
+} */
+
+.header {
+    height: 100px;
+    background-color: red;
+    width: 100%;
+    position: absolute;
+   
+    top: 0px;
+    background: #FFFFFF;
+}
+.header .container,
+.header .container .row {
+    height: 100%;
+}
+.primary-menus {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+.primary-menus ol {
+    display: flex;
+    list-style-type: none;
+    align-items: center;
+    width: 100%;
+    justify-content: flex-end;
+    margin-right: 8%;
+}
+.primary-menus ol li {
+    margin-right: 5%;
+}
+.primary-menus ol li .active-menu {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 22px;
+    color: #1976D2;
+}
+.primary-menus ol li a,
+.primary-menus ol li button {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 22px;
+    color: #000000;
+}
+.primary-menus ol li a:hover,
+.primary-menus ol li button:hover {
+    cursor: pointer;
+}
+.group_button {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+.group_button ol {
+    list-style-type: none;
+    display: flex;
+    width: 100%;
+}
+.group_button button {
+    font-family: 'Roboto';
+    font-weight: 400;
+    font-size: 16px;
+    border-radius: 4px;
+    padding: 1px 11px;
+    color: #44C2FD;
+    background-color: white;
+    border: 1px solid #44C2FD;
+}
+.login-button button,
+.register-button button {
+    margin-right: 17px;
+}
+.condidate-botton {
+    padding-left: 17px;
+    border-left: 2px solid #D2CDCD;
+}
+.active-button button {
+    font-family: 'Roboto';
+    font-weight: 400;
+    font-size: 16px;
+    color: white;
+    background: #44C2FD;
+    border-radius: 4px;
+    box-shadow: 0 0 2px 1px #37A7DB;
+    margin-right: 17px;
+    border: none;
+}

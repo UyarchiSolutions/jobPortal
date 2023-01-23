@@ -1,0 +1,159 @@
+
+
+<app-sidebar></app-sidebar>
+<main class="main_content profilepage">
+	<!-- <app-header></app-header> -->
+    <div *ngIf="route.children.length === 0" class="container-fluid">
+	<div class="container-fluid">
+		<div class="row" style="margin:0px">
+			<div class="col-12">
+				<h1 style="text-align: center;font-size: 25px ; margin-top: 10px;  color: rgb(171, 15, 15) ">
+				</h1>
+			</div>
+
+            <div class="col-lg-6 col-sm-12 col-xs-12 col-md-12 col-xl-6" style="    margin-left: 10px;"> 
+            </div>
+            <!-- <div class="col-lg-6 col-sm-12 col-xs-12 col-md-12 col-xl-6">
+              <div class="order_session" style="margin: 12px 0;margin: 12px 0;">
+                <a style="padding: 2px 6px; margin: 10px 5px 10px 0;;margin-left: 73%;" class="btn btn-primary"
+                  [routerLink]="['AdvanceDetailsCandidate']">Edit Advance Details</a>
+              </div>
+            </div> -->
+			<div class="container">
+				<div class="tab-content" style="margin: 0; padding: 0px;">
+					<div id="menu0" class="container tab-pane active">
+						<div class="col-12">
+							<div class="form_controller">
+								<form>
+									<div class="table table-fixed" style="max-width: 90%; margin: auto" *ngIf="data !=null">
+										<div>
+
+                                            <p><b style="color: blue;">Total Applicants</b><b style="margin-left: 10px;"></b><b>{{data.appliedCount}}</b></p> 
+											<!-- <div style="display: flex; justify-content: space-between">
+												<span>
+													<b>keyskill:</b>
+												</span>
+												<span style="width: 60%" >:
+                                                    <span *ngFor="let item of data.keyskill">{{item}},</span>
+                                                </span>
+											</div> -->
+                                            <div style="display: flex; justify-content: space-between">
+												<span>
+													<b>Company Name:</b>
+												</span>
+												<span style="width: 60%">:
+													<span >{{data.companyName}}</span>
+												</span>
+											</div>
+											<div style="display: flex; justify-content: space-between">
+												<span>
+													<b>Company type:</b>
+												</span>
+												<span style="width: 60%">:
+													<span >{{data.companyType}}</span>
+												</span>
+											</div>
+											<div style="display: flex; justify-content: space-between">
+												<span>
+													<b>Job Title:</b>
+												</span>
+												<span style="width: 60%" >:{{data.jobTittle}}</span>
+											</div>
+											<div style="display: flex; justify-content: space-between">
+												<span>
+													<b>Designation:</b>
+												</span>
+												<span style="width: 60%">:{{data.designation}} </span>
+											</div>
+											<div style="display: flex; justify-content: space-between">
+												<span>
+													<b>Experience:</b>
+												</span>
+												<span style="width: 60%" >:{{data.experienceFrom}} - {{data.experienceTo}}</span>
+											</div>
+
+                                            <div style="display: flex; justify-content: space-between">
+												<span>
+													<b>Salary Range:</b>
+												</span>
+												<span style="width: 60%" >:{{data.salaryRangeFrom}} - {{data.salaryRangeTo}}</span>
+											</div>
+                                            
+                        
+                                          
+                                            <div style="display: flex; justify-content: space-between">
+												<span>
+													<b>Job Description:</b>
+												</span>
+												<span style="width: 60%">:{{data.jobDescription}}</span>
+											</div>
+											<div style="display: flex; justify-content: space-between">
+												<span>
+													<b>KeySkill:</b>
+												</span>
+												<span style="width: 60%">:{{data.keySkill}}</span>
+											</div>
+                                            <div style="display: flex; justify-content: space-between">
+												<span>
+													<b>Candidate Description:</b>
+												</span>
+												<span style="width: 60%">:{{data.candidateDescription}}</span>
+											</div>
+
+											
+
+                                            <div style="display: flex; justify-content: space-between">
+												<span>
+													<b>Employment Type:</b>
+												</span>
+												<span style="width: 60%">:{{data.employmentType}}</span>
+											</div>
+
+
+                                            <div style="display: flex; justify-content: space-between">
+												<span>
+													<b>No:Of:Openings:</b>
+												</span>
+												<span style="width: 60%">:{{data.openings}}</span>
+											</div>
+
+                                            <div style="display: flex; justify-content: space-between">
+												<span>
+													<b>WorkPlace Type:</b>
+												</span>
+												<span style="width: 60%">:{{data.workplaceType}}</span>
+											</div>
+                                            <div style="display: flex; justify-content: space-between">
+												<span>
+													<b>Recuirter Name:</b>
+												</span>
+												<span style="width: 60%">:{{data.recruiterName}}</span>
+											</div>
+                                            <div style="display: flex; justify-content: space-between">
+												<span>
+													<b>Mobile Number:</b>
+												</span>
+												<span style="width: 60%">:{{data.contactNumber}}</span>
+											</div>
+                                       
+                                            <div class="second">
+                                                <div class="col-md-12 text-center">
+                                                      <form>
+                                                           <button class="btn btn-primary btn-sm" type="submit" [disabled]="data.candidatesubmitButton == true" (click)="submit()">Apply For This Job</button>
+                                                           <button class="btn btn-primary btn-sm" type="submit" [disabled]="data.saveButton == true" (click)="SaveJob()">Save This Job</button>
+                                                       </form>
+                                                 </div>
+                                           </div>
+                                            
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</main>

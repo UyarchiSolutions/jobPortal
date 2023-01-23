@@ -1,0 +1,102 @@
+<app-employerside-bar></app-employerside-bar>
+<div class="container-fluid">
+  <div class="col-lg-12 mb-2">
+    <h5 style="text-align: center;color: #d34c4c;    margin-top: 12px;">My Job Post</h5>
+
+    <div class="col-lg-6 col-sm-12 col-xs-12 col-md-12 col-xl-6">
+      <div class="order_session" style="margin: 12px 0;margin: 12px 0;">
+        <!-- <a style="    padding: 11px 6px;
+        margin: 10px 5px 10px 0;
+        margin-left: 34%;
+        margin-top: -2px;" class="btn btn-primary"
+          [routerLink]="['PostJobEmployee']" >Add Post</a> -->
+
+        <button type="submit" class="btn btn-primary btn-block mb-4" style="
+                           /* float: right; */
+    width: 9%;
+    margin-left: 42%;
+                    " [routerLink]="['PostJobEmployee']"
+          [disabled]="this.usedexpires == true || this.validity == true ||  this.approve ==true || this.reacharge==true || this.free == true">
+          Add Post
+        </button>
+      </div>
+
+    </div>
+
+    <p class="form-label error-message" *ngIf="this.usedexpires == true" for="form3Example4" style="color:red;
+        margin-left: 46%;">...Your jobpost limit over...</p>
+    <p class="form-label error-message" *ngIf="this.approve == true" for="form3Example4" style="color:red;
+       margin-left: 44%;">...You Are Not An Approved Employer...</p>
+    <p class="form-label error-message" *ngIf="this.reacharge == true" for="form3Example4" style="color:red;
+      margin-left: 48%;">...No Active Plans...</p>
+   <p class="form-label error-message" *ngIf="this.validity == true" for="form3Example4" style="color:red;
+    margin-left: 154px;">...This Plan Expires...</p>
+    <p class="form-label error-message" *ngIf="this.free == true" for="form3Example4" style="color:red;
+   
+   margin-left: 855px;
+">...Your Free Plan Limit Is over..please reacharge...</p>
+    <div class="table-responsive-sm table_all_orders" style="    width: 78%;
+    overflow-x: auto;
+    margin-left: 20%;"> 
+      <div class="col-12 mt-3">
+
+        <table class="table table-bordered purchese_order_disign">
+          <thead style="color: #177247;">
+            <tr>
+              <th scope="col">S:no</th>
+              <th scope="col">Posted Date</th>
+              <th scope="col">Job Title</th>
+              <th scope="col">Experience Range</th>
+              <th scope="col">Salary Range</th>
+              <th scope="col">Total Job Applicants</th>
+              <th scope="col">Status</th>
+              <th scope="col">Action </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of getDetail; let i=index">
+              <!-- <td > <input class="form-check-input" type="checkbox"
+                  (change)="getCheckedData($event,item,item._id)" id="flexCheckDefault">
+              </td> -->
+              <td>{{i+1}}</td>
+              <td>{{item.createdAt|date:'YYYY-MM-dd'}}</td>
+              <!-- <td >{{item.designation}}</td> -->
+              <td>
+                <a style="margin-right: 13px;" [routerLink]="['ViewJobPostMyJobPost']"
+                  [queryParams]="{ id: item._id }">{{item.designation}}</a>
+              </td>
+              <td>{{item.experienceFrom}} - {{item.experienceTo}}</td>
+              <td>{{item.salaryRangeFrom}} - {{item.salaryRangeTo}}</td>
+              <td>
+                <a style="margin-right: 13px;" [routerLink]="['ViewJobApplicants']" (click)="history(item._id)"
+                  [queryParams]="{ id: item._id }">View</a>
+              </td>
+
+              <td>{{item.adminStatuss}}</td>
+              <td><button type="button" class="btn btn-success " style="margin-left: 10px"
+                  [routerLink]="['/ViewDetailsEmployee/EditEmployeeAdvance']" [queryParams]="{ id: item._id }"
+                  (click)="OdatEdit(item.id)" [disabled]="item.adminStatuss != 'Pending'">
+                  E
+                </button>
+                <button type="button" class="btn btn-danger " style="margin-left: 10px" (click)="OdataDisable(item._id)"
+                  [disabled]="item.adminStatuss != 'Pending'">
+                  D
+                </button>
+                <!-- <button type="button" class="btn btn " style="margin-left: 10px ; " 
+            (click)="OdataRefresh(item._id)" >
+             R
+           </button> -->
+                <button type="button" class="btn btn-primary " style="margin-left: 10px"
+                  [routerLink]="['RePostMyJobPost']" [queryParams]="{ id: item._id }" (click)="OdataRepost(item.id)"
+                  [disabled]="item.adminStatuss != 'Expired'">
+                  RePost
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<router-outlet></router-outlet>

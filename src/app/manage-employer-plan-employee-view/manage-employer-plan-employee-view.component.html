@@ -1,0 +1,87 @@
+<app-employerside-bar></app-employerside-bar>
+<div class="container-fluid">
+    <div class="col-lg-12 mb-2">
+        <h5 style="text-align: center;color: #d34c4c;    margin-top: 12px;">Manage Employer Plan</h5>
+
+        <div class="col-lg-6 col-sm-12 col-xs-12 col-md-12 col-xl-6">
+        </div>
+        <div class="table-responsive-sm table_all_orders" style="    width: 78%;
+    overflow-x: auto;
+    margin-left: 20%;">
+     <div style="    margin-top: 20px;
+     margin-bottom: 20px;" *ngFor="let item of plandata; let i=index">
+
+       <b  style=" margin-left: 30px; color: rgb(51, 13, 242);">Plan Name:</b><b style="margin-left: 10px;">{{item.planName}}</b><b
+         style="    margin-left: 14px;"></b>
+
+         <b  style="    margin-left: 241px; color: rgb(51, 13, 242);">Plan validity:</b><b style="margin-left: 10px;">{{item.date}} - {{item.expDate}}</b><b
+         style="    margin-left: 14px;"></b>
+     </div>
+            <div class="col-12 mt-3">
+
+                <table style="width:100%" *ngFor="let item of plandata; let i=index" >
+                    <tr>
+                      <th>Menus</th>
+                      <th>Limit</th> 
+                      <th>Used</th>
+                      <th>Balance</th>
+                    </tr>
+                    <tr>
+                      <td>No:Of: JobPost</td>
+                      <td>{{item.jobPost}}</td>
+                      <!-- <td>{{item.postJobUsed}}</td> -->
+                     <td>
+                  <a style="margin-right: 13px;" [routerLink]="['ViewpostAfterUsedJobPost']"
+                    [queryParams]="{ id: item.userId }">{{item.postJobUsed}}</a>
+                </td>
+                      <td>{{item.jobPost  - item.postJobUsed }}</td>
+                    </tr>
+                    <tr>
+                      <td>No:Of:CV Access </td>
+                      <td>{{item.cvAccess}}</td>
+                      <td>
+                        <a style="margin-right: 13px;" [routerLink]="['ViewCVAfterUsedCVAccess']"
+                          [queryParams]="{ id: item.userId }">{{item.cvCount}}</a>
+                      </td>
+                      <td>{{item.cvAccess  - item.cvCount }}</td>
+                    </tr>
+                    <tr>
+                      <td>No:Of:Mass Mailers </td>
+                      <td>{{item.numberOfMassMailer}}</td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+              
+                  </table>
+                <!-- <table class="table table-bordered purchese_order_disign">
+                    <thead style="color: #177247;">
+                        <tr>
+                            <th scope="col">S:no</th>
+                            <th scope="col">Menus</th>
+                            <th scope="col">Alocated Limit</th>
+                            <th scope="col">Used</th>
+                            <th scope="col">Balance</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of plandata; let i=index">
+                            <td>{{i+1}}</td>
+                            <td>{{item.date}}</td>
+                            <td>
+                                <button class="btn btn-link" data-bs-toggle="modal" data-bs-target="#exampleModalCenter"
+                                    (click)="plandatapop()">
+                                    {{ item.planName }}
+                                </button>
+                            </td>
+                            <td>{{item.cost}}</td>
+                            <td>{{item.jobPost}}</td>
+                            <td>{{item.cvAccess}}</td>
+                            <td>{{item.paymentStatus}}</td>
+                        </tr>
+                    </tbody>
+                </table> -->
+            </div>
+        </div>
+    </div>
+</div>
+<router-outlet></router-outlet>

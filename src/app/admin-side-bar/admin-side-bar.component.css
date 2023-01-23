@@ -1,0 +1,70 @@
+.sidebar {
+    display: block;
+    position: fixed;
+    width: 100%;
+    max-width: 16.063rem;
+    top: 0;
+    bottom: 0;
+    z-index: 910;
+    -webkit-transition: all 400ms ease;
+    -o-transition: all 400ms ease;
+    transition: all 400ms ease;
+    border-right: 2px solid #EBEBEB;
+  }
+  .sidebar .sidebar-header a {
+    display: block;
+    padding: 1.125rem 1rem;
+    text-align: center;
+  }
+  .sidebar .sidebar-header a img {
+    max-width: 80%;
+    max-height: 60px;
+  }
+  .sidebar .poweredby {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    width: 140px;
+  }
+  .sidebar .sidebar-body {
+    max-height: 92vh;
+    padding-top: 15px;
+  }
+  .sidebar .sidebar-body .scroll-content {
+    display: flow-root;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+  .sidebar .sidebar-body .scroll-content ul {
+    margin: 0;
+    padding: 0;
+  }
+  .sidebar .sidebar-body .scroll-content ul li {
+    list-style: none;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    transition: all 400ms ease;
+    position: relative;
+    margin: 5px 0;
+  }
+  .sidebar .sidebar-body .scroll-content ul li a {
+    display: block;
+    font-size: 1rem;
+    display: flex;
+    white-space: nowrap;
+    color: #666666;
+    border-radius: 0.25rem;
+    padding: 0.735rem 1rem;
+    transition: all 400ms ease;
+  }
+  .sidebar .sidebar-body .scroll-content ul li a span {
+    transition: all 400ms ease;
+    margin-left: 1rem;
+    flex: 1;
+  }
+  .sidebar .sidebar-body .scroll-content ul li a i {
+    font-size: 1.2rem;
+  }
+  .sidebar ul .feat-show.show {
+    display: block;
+  }

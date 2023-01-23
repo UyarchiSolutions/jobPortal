@@ -1,0 +1,119 @@
+
+<app-employerside-bar></app-employerside-bar>
+<main class="main_content profilepage">
+    <!-- <app-header></app-header> -->
+    <div class="container-fluid">
+        <div class="container-fluid">
+            <div class="row" style="margin:0px">
+                <div class="col-12">
+                    <h1 style="text-align: center;font-size: 25px ; margin-top: 10px;  color: rgb(171, 15, 15) ">My Account Details
+                       
+                    </h1>
+                </div>
+
+                <div class="col-lg-6 col-sm-12 col-xs-12 col-md-12 col-xl-6" style="    margin-left: 10px;">
+                </div>
+                
+              
+          
+                <div class="container">
+                    <div class="tab-content" style="margin: 0; padding: 0px;">
+                        <div id="menu0" class="container tab-pane active">
+                            <div class="col-12">
+                                <div class="form_controller">
+                                    <form>
+                                        <div class="table table-fixed" style="max-width: 90%; margin: auto"
+                                            *ngIf="data != null">
+                                            <div>
+                                                <div style="display: flex; justify-content: space-between">
+                                                    <span>
+                                                        <b>Company Name:</b>
+                                                    </span>
+                                                    <span style="width: 60%">:{{data.companyName}}</span>
+                                                </div>
+                                                <div style="display: flex; justify-content: space-between">
+                                                    <span>
+                                                        <b>Company OfficialEmail:</b>
+                                                    </span>
+                                                    <span style="width: 60%">:{{data.email}}</span>
+                                                </div>
+                                                <!-- <div style="display: flex; justify-content: space-between">
+                                                    <span>
+                                                        <b>Mobile Number:</b>
+                                                    </span>
+                                                    <span style="width: 60%">:{{data.education}}</span>
+                                                </div> -->
+
+                                                <div style="display: flex; justify-content: space-between">
+                                                    <span>
+                                                        <b>Contact Person Name:</b>
+                                                    </span>
+                                                    <span style="width: 60%">:
+                                                        <span>{{data.name}}</span>
+                                                    </span>
+                                                </div>
+                                                <div style="display: flex; justify-content: space-between">
+                                                    <span>
+                                                        <b>Mobile Number:</b>
+                                                    </span>
+                                                    <span style="width: 60%">:
+                                                        <span>{{data.mobileNumber}}</span>
+                                                    </span>
+                                                </div>
+                                                <div style="display: flex; justify-content: space-between">
+                                                    <span>
+                                                        <b>Company Type:</b>
+                                                    </span>
+                                                    <span style="width: 60%">:
+                                                        <span>{{data.companyType}}</span>
+                                                    </span>
+                                                </div>
+                                                <div style="display: flex; justify-content: space-between">
+                                                    <span>
+                                                        <b>Pincode:</b>
+                                                    </span>
+                                                    <span style="width: 60%">:
+                                                        <span>{{data.pincode}}</span>
+                                                    </span>
+                                                </div>
+
+                                                <div class="form_singlerow">
+                                                    <span>
+                                                        <b>Location:</b>
+                                                    </span>
+                                                    <button class="btn btn-link" data-bs-toggle="modal" data-bs-target="#exampleModalLabel" style="margin-right: 97px;"  (click)="viewMap(data.lat,data.long)">View Your Location</button>
+                                                </div>
+                                                <div class="modal fade" id="exampleModalLabel" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
+                                                style="margin-top: 66px;">
+                                                <div class="modal-dialog">
+                                                  <div class="modal-content">
+                                                    <div class="modal-header">
+                                                      <h5 class="modal-title" id="exampleModalLabel">Location - Map View</h5>
+                                                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body" style="    height: 400px;">
+                                                      <agm-map [latitude]="this.latitude" [longitude]="this.longitude " [zoom]="zoom" zoomControl="true" style="    height: 300px;">
+                                                        <agm-marker [latitude]="this.latitude" [longitude]="this.longitude ">
+                                                        </agm-marker>
+                                          
+                                                      </agm-map>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
+                                                      </div>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

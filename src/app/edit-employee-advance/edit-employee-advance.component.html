@@ -1,0 +1,433 @@
+<app-employerside-bar></app-employerside-bar>
+<div class="container-fluid">
+    <div class="row" style="margin: 0px">
+        <div class="col-12">
+            <h4 style="text-align: center; font-size: 19px; margin-top: 10px;    color: #a70a0a;">Edit A Job </h4>
+        </div>
+
+
+        <div class="tab-content" style="margin: 0; padding: 0px">
+            <div #page1 id="menu0" class="container tab-pane active">
+                <br />
+                <div class="col-12">
+                    <div class="form_controller">
+                        <form [formGroup]="EditpostJob">
+                            <div class="row">
+
+                                <div class="form_singlerow">
+                                    <label for="categoryImage">Job Title: <span class="required">*</span></label>
+                                    <input type="text" id="categoryImage" formControlName="jobTittle" min="1" step="1"
+                                        maxlength="50" ng-pattern="/^[a-zA-Z\s]*$/" />
+                                </div>
+
+                                    <div class="row align-items-start">
+                                    <span style="color: red;text-align:center;margin-left: 60px;margin-bottom: 14px;"
+                                        *ngIf="formsubmited && EditpostJob.get('jobTittle')?.invalid">Enter
+                                        the jobTittle</span>
+                                </div>
+                           
+
+                                <div class="form_singlerow">
+                                    <label for="categoryImage">Designation: <span class="required">*</span></label>
+                                    <input type="text" id="categoryImage" formControlName="designation" min="1" step="1"
+                                        maxlength="50" ng-pattern="/^[a-zA-Z\s]*$/" />
+                                </div>
+                                <div class="row align-items-start">
+                                    <span style="color: red;text-align:center;margin-left: 60px;margin-bottom: 14px;"
+                                        *ngIf="formsubmited && EditpostJob.get('designation')?.invalid">Enter
+                                        the Designation</span>
+                                </div>
+                                <div class="form_singlerow">
+                                    <label for="categoryImage">Recruiter Name: <span class="required">*</span></label>
+                                    <input type="text" id="categoryImage" formControlName="recruiterName" min="1" step="1"
+                                        maxlength="50" ng-pattern="/^[a-zA-Z\s]*$/" />
+                                </div>
+                                <div class="row align-items-start">
+                                    <span style="color: red;text-align:center;margin-left: 60px;margin-bottom: 14px;"
+                                        *ngIf="formsubmited && EditpostJob.get('recruiterName')?.invalid">Enter
+                                        the recruiterName</span>
+                                </div>
+
+                                <div class="form_singlerow">
+                                    <label for="categoryImage">Mobile Number: <span class="required">*</span></label>
+                                    <input type="text" id="categoryImage" formControlName="contactNumber"
+                                        onkeypress="return event.keyCode === 8 || event.charCode >= 48 && event.charCode <= 57"
+                                        pattern="[6789][0-9]{9}" maxlength="10">
+                                </div>
+                                <div class="row align-items-start">
+                                    <span style="color: red;text-align:center;margin-left: 60px;margin-bottom: 14px;"
+                                        *ngIf="formsubmited && EditpostJob.get('mobileNumber')?.invalid">Enter
+                                        the MobileNumber</span>
+                                </div>
+
+                                <div class="form_singlerow">
+                                    <label for="categoryImage">Job Description: <span class="required">*</span></label>
+                                    <textarea type="" id="categoryImage" formControlName="jobDescription" min="1" step="1"
+                                        maxlength="50" ng-pattern="/^[a-zA-Z\s]*$/" style="    width: 60%;    height: 78px;" ></textarea>
+                                </div>
+
+                                <div class="form_singlerow">
+                                    <label for="categoryImage">KeySkills: <span class="required">*</span></label>
+                                    <input type="text" id="categoryImage" formControlName="keySkill" min="1" step="1"
+                                        maxlength="50" ng-pattern="/^[a-zA-Z\s]*$/" />
+                                </div>
+                                <div class="row align-items-start">
+                                    <span style="color: red;text-align:center;margin-left: 60px;margin-bottom: 14px;"
+                                        *ngIf="formsubmited && EditpostJob.get('keySkill')?.invalid">Enter
+                                        the keySkill</span>
+                                </div>
+
+                                <!-- <div class="form_singlerow">
+                                    <label for="categoryImage">Salary Range From: <span class="required">*</span></label>
+                                    <input type="text" id="categoryImage" formControlName="salaryRangeFrom">
+                                </div>
+
+                                <div class="form_singlerow">
+                                    <label for="categoryImage">Salary Range To: <span class="required">*</span></label>
+                                    <input type="text" id="categoryImage" formControlName="salaryRangeTo">
+                                </div> -->
+                                <div class="form_singlerow">
+                                    <label for="categoryImage">Qualification: <span class="required">*</span></label>
+                                    <input type="text" id="categoryImage" formControlName="educationalQualification">
+                                </div>
+                                <div class="row align-items-start">
+                                    <span style="color: red;text-align:center;margin-left: 60px;margin-bottom: 14px;"
+                                        *ngIf="formsubmited && EditpostJob.get('educationalQualification')?.invalid">Enter
+                                        the Qualification</span>
+                                </div>
+                                <!-- <div class="form_singlerow">
+                                    <label for="categoryImage">Experience From: <span class="required">*</span></label>
+                                    <input type="text" id="categoryImage" formControlName="experienceFrom">
+                                </div>
+
+                                <div class="form_singlerow">
+                                    <label for="categoryImage">Experience To: <span class="required">*</span></label>
+                                    <input type="text" id="categoryImage" formControlName="experienceTo">
+                                </div> -->
+
+                                <div class="form_singlerow">
+                                    <label for="categoryImage">Salary Range: <span class="required">*</span></label>
+                                    <input type="text" id="categoryImage" style="    width: 125px;" formControlName="salaryRangeFrom">
+                                    <input type="text" id="categoryImage" style="    width: 125px;" formControlName="salaryRangeTo">
+                                </div>
+    
+                                <div class="form_singlerow">
+                                    <label for="categoryImage">Experience Range: <span class="required">*</span></label>
+                                    <input type="text" id="categoryImage" style="    width: 125px;" formControlName="experienceFrom">
+                                    <input type="text" id="categoryImage" style="    width: 125px;" formControlName="experienceTo">
+                                </div>
+                                <div class="row align-items-start">
+                                    <span style="color: red;text-align:center;margin-left: 60px;margin-bottom: 14px;"
+                                        *ngIf="formsubmited && EditpostJob.get('experienceFrom')?.invalid && EditpostJob.get('experienceTo')?.valid">Enter
+                                         Experinece From</span>
+                                        <span style="color: red;text-align:center;margin-left: 60px;margin-bottom: 14px;"
+                                        *ngIf="formsubmited && EditpostJob.get('experienceTo')?.invalid && EditpostJob.get('experienceFrom')?.valid">Enter
+                                         Experinece To</span>
+                                </div>
+
+                                 <!-- <div>
+                                    <label for="selectstreet" style="    margin-top: 15px;">Experience:</label>
+                                    <b><label for="selectstreet" style="        margin-left: 64px;" >Year:</label></b>
+                                <select id="year" name="year" formControlName="experienceFrom" style="     margin-left: 11px;">
+                                    <option>year</option>
+                                    <option value="0">Fresher</option>
+                                    <option value="1">1 year</option>
+                                    <option value="2">2 year</option>
+                                    <option value="3">3 year</option>
+                                    <option value="4">4 year</option>
+                                    <option value="5">5 year</option>
+                                    <option value="6">6 year</option>
+                                    <option value="7">7 year</option>
+                                    <option value="8">8 year</option>
+                                    <option value="9">9 year</option>
+                                    <option value="10">10 year</option>
+                                    <option value="11">11 year</option>
+                                    <option value="12">12 year</option>
+                                    <option value="13">13 year</option>
+                                    <option value="14">14 year</option>
+                                    <option value="15">15 year</option>
+                                    <option value="16">16 year</option>
+                                    <option value="17">17 year</option>
+                                    <option value="18">18 year</option>
+                                    <option value="19">19 year</option>
+                                    <option value="20">20 year</option>
+                                    <option value="21">21 year</option>
+                                    <option value="22">22 year</option>
+                                    <option value="23">23 year</option>
+                                    <option value="24">24 year</option>
+                                    <option value="25">25 year</option>
+                                    <option value="26">26 year</option>
+                                   
+                                   
+                                </select>
+                            <b><label for="selectstreet" >Month:</label></b>
+                                <select id="year" name="year" formControlName="experienceTo" style="    margin-left: 5px;">
+                                    <option>Month</option>
+                                  
+                                    <option value="1">1 month</option>
+                                    <option value="2">2 month</option>
+                                    <option value="3">3 month</option>
+                                    <option value="4">4 month</option>
+                                    <option value="5">5 month</option>
+                                    <option value="6">6 month</option>
+                                    <option value="7">7 month</option>
+                                    <option value="8">8 month</option>
+                                    <option value="9">9 month</option>
+                                    <option value="10">10 month</option>
+                                    <option value="11">11 month</option>
+                                 
+                                   
+                                   
+                                </select>
+                            </div> -->
+
+                                <div class="form_singlerow">
+                                    <label for="selectstreet">Interview Type:</label>
+                                <select id="year" name="year" formControlName="interviewType" style="    margin-left: 60px;" (change)="selectvalue($event)">
+                                    <option [ngValue]="null" disabled selected>Select</option>
+                                    <option value="Walkin">Walk in</option>
+                                    <option value="Direct">Direct</option>
+                                </select>
+                            </div>
+                            <div class="row align-items-start">
+                                <span style="color: red;text-align:center;margin-left: 60px;margin-bottom: 14px;"
+                                    *ngIf="formsubmited && EditpostJob.get('interviewType')?.invalid">Enter
+                                    the InterviewType</span>
+                            </div>
+
+                            <div style="display: flex;justify-content: space-between;margin-right: 40%;    margin-bottom: 15px;"
+                            *ngIf="valuedata =='Walkin'">
+                            <span>
+                              <b>Date:</b>
+                            </span>
+
+                            <input 
+                            type="text"
+                            name="daterange"
+                            style="
+                          
+                                width: 195px;
+                                margin-left: 199px;"
+                            ngxDaterangepickerMd
+                            [(ngModel)]="selectedRange"
+                            [showCustomRangeLabel]="true"
+                            [alwaysShowCalendars]="true"
+                            [linkedCalendars]="false"
+                            [ranges]="ranges"
+                            [showClearButton]="true"
+
+                            [locale]="{applyLabel: 'ok', format: 'YYYY-MM-DD'}"
+                            [placeholder]="calendarPlaceholder"
+                            [keepCalendarOpeningWithRange]="true"
+                           
+                            formControlName="interviewDate"
+                            class="form-control"  />
+                            <!-- <input type="date" style="  border-radius: 18px;    margin-bottom: 12px;" formControlName="interviewDate"> -->
+ 
+                            <!-- <input  type="text" ngxDaterangepickerMd
+                            [locale]="{applyLabel: 'ok', format: 'YYYY-MM-DD'}" startKey="start" endKey="end" formControlName="interviewDate"
+                            placeholder="Select Date Range"
+                            style="margin-right: 10px; text-align: left;padding: 5px;   margin-left: 19px; max-width: 180px;font-size: 12px;margin-bottom: 15px;border: 1px solid rgb(17, 15, 15);"> -->
+                          </div>
+                          <!-- <div style="display: flex;justify-content: space-between;margin-right: 40%;    margin-bottom: 15px;"
+                          *ngIf="valuedata =='Walkin'">
+                            <b for="selectstreet" >Time:</b>
+                        <select id="year" name="year" formControlName="interviewType" style="    margin-left: 60px;" >
+                            <option>Select</option>
+                            <option value="9 AM - 1 PM">9 AM - 1 PM</option>
+                            <option value="2 PM- 6 PM">2 PM- 6 PM</option>
+                        </select>
+                    </div> -->
+                    <div style="display: flex;justify-content: space-between;margin-right: 40%;    margin-bottom: 15px;"
+                            *ngIf="valuedata =='Walkin'">
+                            <span>
+                              <b>Time:</b>
+                            </span>
+                    <div class="col-6 col-sm-6 col-xs-6  col-lg-3 col-xl-2 col-xxl-2 mt-2" >
+                        <input type="time" name="" id="" formControlName="startTime"
+                            style="height: 35px;border-radius: 5px;border: 1px solid gray;padding: 4px 7px;    width: 139%;    margin-left: 67px;">
+                    </div>
+                    <div class="col-6 col-sm-6 col-xs-6  col-lg-3 col-xl-2 col-xxl-2 mt-2" >
+                        <input type="time" name="" id="" formControlName="endTime"
+                            style="height: 35px;border-radius: 5px;border: 1px solid gray;padding: 4px 7px;    width: 139%;">
+                    </div>
+                    </div>
+                          <!-- <div style="display: flex;justify-content: space-between;margin-right: 40%;"
+                            *ngIf="valuedata =='Walkin'">
+                            <span>
+                              <b>Time:</b>
+                            </span>
+                           
+                            <input type="time" style="  border-radius: 18px;    margin-bottom: 12px;" formControlName="interviewTime">
+                          </div> -->
+                          <div style="display: flex;justify-content: space-between;margin-right: 40%;"
+                          *ngIf="valuedata =='Walkin'">
+                          <span>
+                            <b>Location:</b>
+                          </span>
+                          <input type="text" style="  border-radius: 18px;    margin-bottom: 12px;" formControlName="location">
+                        </div>
+
+                        <div style="display: flex;justify-content: space-between;margin-right: 40%;"
+                            *ngIf="valuedata =='Direct'">
+                            <span>
+                              <b>ContactName:</b>
+                            </span>
+                            <input type="text" style="  border-radius: 18px;    margin-bottom: 12px;" formControlName="interviewerName"
+                            >
+                          </div>
+                          <div style="display: flex;justify-content: space-between;margin-right: 40%;"
+                            *ngIf="valuedata =='Direct'">
+                            <span>
+                              <b>Contact No:</b>
+                            </span>
+                            <input type="text" style="  border-radius: 18px;    margin-bottom: 12px;" formControlName="interviewerContactNumber"
+                            onkeypress="return event.keyCode === 8 || event.charCode >= 48 && event.charCode <= 57"
+                                    pattern="[6789][0-9]{9}" maxlength="10">
+                          </div>
+
+                            <!-- <div style="display: flex;justify-content: space-between;margin-right: 40%;"
+                                *ngIf="valuedata =='Walkin'">
+                                <span>
+                                  <b>Date:</b>
+                                </span>
+                                <input type="date" style="  border-radius: 18px;    margin-bottom: 12px;" formControlName="interviewDate">
+                              </div>
+                            
+                              <div style="display: flex;justify-content: space-between;margin-right: 40%;"
+                                *ngIf="valuedata =='Walkin'">
+                                <span>
+                                  <b>Time:</b>
+                                </span>
+                                <input type="time" style="  border-radius: 18px;    margin-bottom: 12px;" formControlName="interviewTime">
+                              </div>
+                              <div style="display: flex;justify-content: space-between;margin-right: 40%;"
+                              *ngIf="valuedata =='Walkin'">
+                              <span>
+                                <b>Location:</b>
+                              </span>
+                              <input type="text" style="  border-radius: 18px;    margin-bottom: 12px;" formControlName="location">
+                            </div>
+
+                            <div style="display: flex;justify-content: space-between;margin-right: 40%;"
+                                *ngIf="valuedata =='Direct'">
+                                <span>
+                                  <b>ContactName:</b>
+                                </span>
+                                <input type="text" style="  border-radius: 18px;    margin-bottom: 12px;" formControlName="interviewerName">
+                              </div>
+                              <div style="display: flex;justify-content: space-between;margin-right: 40%;"
+                                *ngIf="valuedata =='Direct'">
+                                <span>
+                                  <b>Contact No:</b>
+                                </span>
+                                <input type="text" style="  border-radius: 18px;    margin-bottom: 12px;" formControlName="interviewerContactNumber">
+                              </div> -->
+
+                              <div class="form_singlerow">
+                                <label for="categoryImage">Candidate Description: <span class="required">*</span></label>
+                                <textarea type="text" id="categoryImage" style="    width: 60%;    height: 78px;" formControlName="candidateDescription"></textarea>
+                            </div>
+                            <div class="form_singlerow">
+                                <label for="selectstreet">WorkPlace Type:</label>
+                            <select id="year" name="year" formControlName="workplaceType" style="    margin-left: 60px;" (change)="selectvalue($event)">
+                                <option [ngValue]="null" disabled selected>Select</option>
+                                <option value="Onsite">Onsite</option>
+                                <option value="Remote">Remote</option>
+                            </select>
+                        </div>
+
+                        <!--  -->
+
+                        <div class="form_singlerow">
+                            <label for="selectstreet">Industry:</label>
+                        <select id="year" name="year" formControlName="industry" style="    margin-left: 60px;" (change)="selectvalue($event)">
+                            <option>Select</option>
+                            <option value="AnalyTics/KPO/Research">AnalyTics/KPO/Research</option>
+                            <option value="BPO/CallCenter">BPO/Call Center</option>
+                            <option value="ItServices/Consulting">It Services/Consulting</option>
+                            <option value="HardWare">HardWare</option>
+                            <option value="NetWorking">NetWorking</option>
+                            <!-- <option>Select</option>
+                            <option value="Onsite">Onsite</option>
+                            <option value="Remote">Remote</option> -->
+                        </select>
+                    </div>
+                    <!--  -->
+
+                    <div class="form_singlerow">
+                        <label for="selectstreet">Preferred Industry:</label>
+                    <select id="year" name="year" formControlName="preferredindustry" style="    margin-left: 60px;" (change)="selectvalue($event)">
+                        <option>Select</option>
+                            <option value="AnalyTics/KPO/Research">AnalyTics/KPO/Research</option>
+                            <option value="BPO/CallCenter">BPO/Call Center</option>
+                            <option value="ItServices/Consulting">It Services/Consulting</option>
+                            <option value="HardWare">HardWare</option>
+                            <option value="NetWorking">NetWorking</option>
+                        <!-- <option>Select</option>
+                        <option value="Onsite">Onsite</option>
+                        <option value="Remote">Remote</option> -->
+                    </select>
+                </div>
+
+                <!--  -->
+                <!-- <div class="form_singlerow">
+                    <label for="selectstreet">Functional Area:</label>
+                <select id="year" name="year" formControlName="preferredindustry" style="    margin-left: 60px;" (change)="selectvalue($event)">
+                    <option>Select</option>
+                    <option value="Onsite">Onsite</option>
+                    <option value="Remote">Remote</option>
+                </select>
+            </div> -->
+
+            
+                           
+            <div class="form_singlerow">
+                <label for="categoryImage">Role: <span class="required">*</span></label>
+                <input type="text" id="categoryImage" formControlName="role"  />
+            </div>
+
+            <div class="form_singlerow">
+                <label for="categoryImage">Job Location: <span class="required">*</span></label>
+                <input type="text" id="categoryImage" formControlName="jobLocation"  />
+            </div>
+            <div class="row align-items-start">
+                <span style="color: red;text-align:center;margin-left: 60px;margin-bottom: 14px;"
+                    *ngIf="formsubmited && EditpostJob.get('jobLocation')?.invalid">Enter
+                    the Location</span>
+            </div>
+
+            <div class="form_singlerow">
+                <label for="selectstreet">Employment Type</label>
+            <select id="year" name="year" formControlName="employmentType" style="    margin-left: 60px;" >
+                <option [ngValue]="null" disabled selected>Select</option>
+                <option value="Full Time">Full Time</option>
+                <option value="Part Time">Part Time</option>
+                <option value="Contract">Contract</option>
+                <option value="Temporary">Temporary</option>
+            </select>
+        </div>
+
+        <div class="form_singlerow">
+            <label for="categoryImage">No:Of:Openings :  <span class="required">*</span></label>
+            <input type="text" id="categoryImage" formControlName="openings"  />
+        </div>
+                               
+        <div class="row align-items-start">
+            <span style="color: red;text-align:center;margin-left: 60px;margin-bottom: 14px;"
+                *ngIf="formsubmited && EditpostJob.get('openings')?.invalid">Enter
+                the openings</span>
+        </div>
+
+
+                                <button style="padding: 0px 6px; margin-left: 41%; width: 80px;margin-top: 20px"
+                                    class="btn btn-primary" (click)="submit()">Update</button>
+
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

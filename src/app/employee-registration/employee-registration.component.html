@@ -1,0 +1,230 @@
+<div class="container-fluid" *ngIf="verfiyemail ==false">
+    <div class="row" style="margin: 0px">
+        <div class="col-12">
+            <h4 style="text-align: center; font-size: 19px; margin-top: 10px;    color: #a70a0a;">Employer Registration </h4>
+        </div>
+
+
+        <div class="tab-content" style="margin: 0; padding: 0px">
+            <div #page1 id="menu0" class="container tab-pane active">
+                <br />
+                <div class="col-12">
+                    <div class="form_controller">
+                        <form [formGroup]="EmployeeRegistration">
+                            <p class="form-label error-message" *ngIf="displayMsg" for="form3Example4"
+                            style="color: rgb(23, 16, 214);
+                             margin-left: 75px;">Link Sent Your Email !! Please Check !!</p>
+                               <p class="form-label error-message" *ngIf="isdisplay" for="form3Example4"
+                               style="color:red;
+                                margin-left: 75px;">Email Already Taken</p>
+                            <div class="row">
+
+                                <div class="form_singlerow">
+                                    <label for="categoryImage">Company Name: <span class="required">*</span></label>
+                                    <input type="text" id="categoryImage" formControlName="companyName" min="1" step="1"
+                                        ng-pattern="/^[a-zA-Z\s]*$/" />
+                                </div>
+                                <div class="row align-items-start">
+                                    <span style=" color: red;
+                                    text-align: center;
+                                    margin-left: 46px;
+                                    margin-top: -11px;"
+                                        *ngIf="formsubmited && EmployeeRegistration.get('companyName')?.invalid">Enter
+                                        the companyName</span>
+                                </div>
+
+                             
+
+                                <div class="form_singlerow">
+                                    <label for="categoryImage">Company OfficialEmail: <span class="required">*</span></label>
+                                    <input type="text" id="categoryImage" formControlName="email" />
+                                </div>
+                                <div class="row align-items-start">
+                                    <span style=" color: red;
+                                    text-align: center;
+                                    margin-left: 13px;
+                                    margin-top: -11px;"
+                                        *ngIf="formsubmited && EmployeeRegistration.get('email')?.invalid">Enter
+                                        the Email</span>
+                                </div>
+
+                              
+
+                                 <!-- password -->
+                                 <div class="form_singlerow">
+                                    <label for="categoryImage">Password: <span class="required">*</span></label>
+                                    <input type="password" id="categoryImage" formControlName="password">
+                                </div>
+                                <div class="row align-items-start">
+                                    <span style="color: red;
+                                    text-align: center;
+                                    margin-left: 23px;
+                                    margin-top: -11px;"
+                                        *ngIf="formsubmited && EmployeeRegistration.get('password')?.invalid">Enter
+                                        the password</span>
+                                </div>
+
+                                <div class="form_singlerow">
+                                    <label for="categoryImage">Confirm Password: <span class="required">*</span></label>
+                                    <input type="password" id="categoryImage" formControlName="confirmpassword">
+                                </div>
+                                <div class="row align-items-start">
+                                    <span style="color: red;
+                                    text-align: center;
+                                    margin-left: 55px;
+                                    margin-top: -11px;"
+                                        *ngIf="formsubmited && EmployeeRegistration.get('confirmpassword')?.invalid || formsubmited && EmployeeRegistration.get('password')?.value !=EmployeeRegistration.get('confirmpassword')?.value">Enter
+                                        the Confirm password</span>
+                                </div>
+
+                                <div class="form_singlerow">
+                                    <label for="categoryImage">Mobile Number: <span class="required">*</span></label>
+                                    <input type="text" id="categoryImage" formControlName="mobileNumber"
+                                        onkeypress="return event.keyCode === 8 || event.charCode >= 48 && event.charCode <= 57"
+                                        pattern="[6789][0-9]{9}" maxlength="10">
+                                </div>
+                                <div class="row align-items-start">
+                                    <span style="color: red;
+                                    text-align: center;
+                                    margin-left: 44px;
+                                    margin-top: -11px;"
+                                        *ngIf="formsubmited && EmployeeRegistration.get('mobileNumber')?.invalid">Enter
+                                        the MobileNumber</span>
+                                </div>
+
+                                <div class="form_singlerow">
+                                    <label for="categoryImage">Contact Person Name: <span class="required">*</span></label>
+                                    <input type="text" id="categoryImage" formControlName="name" min="1" step="1"
+                                        maxlength="50" ng-pattern="/^[a-zA-Z\s]*$/" />
+                                </div>
+                                <div class="row align-items-start">
+                                    <span style="color: red;
+                                    text-align: center;
+                                    margin-left: 42px;
+                                    margin-top: -11px;"
+                                        *ngIf="formsubmited && EmployeeRegistration.get('name')?.invalid">Enter
+                                        the Contact Name</span>
+                                </div>
+
+                                <div style="    margin-top: 15px;">
+                                    <label for="selectstreet"> Company Type:  <span class="required">*</span></label>
+                                <select id="year" name="year" formControlName="companyType" style="     margin-left: 60px;">
+                                    <option [ngValue]="null" disabled selected>Select Type</option>
+                                    <option value="ForeignMNC">Foreign MNC</option>
+                                    <option value="Corporate">Corporate</option>
+                                    <option value="IndianMNC">Indian MNC</option>
+                                    <option value="Startup">Startup</option>
+                                </select>
+                            </div>
+                            <div class="row align-items-start">
+                                <span style="color: red;
+                                text-align: center;
+                                margin-left: 44px;
+    margin-top: 5px;"
+                                    *ngIf="formsubmited && EmployeeRegistration.get('companyType')?.invalid">Enter
+                                    the companyType</span>
+                            </div>
+                           
+
+                            <div class="form_singlerow">
+                                <label for="Pincode">Pincode:  <span class="required">*</span></label>
+                                <input type="text" formControlName="pincode"
+                                    onkeypress="return event.keyCode === 8 || event.charCode >= 48 && event.charCode <= 57"
+                                    pattern="^[1-8][0-9]{5}$" maxlength="6">
+                            </div>
+                            <div class="row align-items-start">
+                                <span style="color: red;
+                                text-align: center;
+                                margin-left: 23px;
+                                margin-top: -11px;"
+                                    *ngIf="formsubmited && EmployeeRegistration.get('pincode')?.invalid">Enter
+                                    the pincode</span>
+                            </div>
+                            
+
+                            <!-- <div class="col-sm-12">
+                              <button class="btn btn-link" data-bs-toggle="modal" data-bs-target="#exampleModal" style="margin-right: 97px;">Point Your Location</button>
+                            </div> -->
+                            <div class="col-sm-12">
+                              <div class="form_singlerow">
+                                  <label for="categoryImage">Current Address: <span class="required">*</span></label>
+                                <input class="form-control" ngx-google-places-autocomplete [options]="options"
+                                  (onAddressChange)="handleAddressChange($event)" formControlName="locationCurrent"/>
+                              </div>
+                            </div>
+                            <!-- <agm-map class="z-depth-1-half map-container" style="height: 400px;" [latitude]="lat" [longitude]="long"
+                            [zoom]="10" [usePanning]="true">
+                            <agm-marker (dragEnd)="draggEnded($event)" [markerDraggable]='true' [latitude]="parseFloat(latitude)"
+                              [longitude]="parseFloat(longtitude)"></agm-marker>
+
+                          </agm-map>
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">{{myAddres}}</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div> -->
+                            <!-- <div class="row align-items-start">
+                              <span style="    color: red;
+                              text-align: center;
+                              margin-left: 13px;
+                              margin-top: -16px;"
+                                  *ngIf="formsubmited && Candidateform.get('lat')?.invalid">Point
+                                  the location</span>
+                          </div> -->
+                            <button style="padding: 0px 6px; margin-left: 41%; width: 80px;margin-top: 20px"
+                                class="btn btn-primary" (click)="submit()">Register</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+
+                                <!-- <button style="padding: 0px 6px; margin-left: 41%; width: 80px;margin-top: 20px"
+                                    class="btn btn-primary" (click)="submit()">Register</button> -->
+                                    
+
+                            
+                    
+                    
+                
+            
+    
+
+
+        <!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">{{myAddres}}</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <agm-map class="z-depth-1-half map-container" style="height: 400px;" [latitude]="lat" [longitude]="long"
+                    [zoom]="13" [usePanning]="true">
+                    <agm-marker (dragEnd)="draggEnded($event)" [markerDraggable]='true' [latitude]="changefloat(latitude)"
+                      [longitude]="changefloat(longtitude)"></agm-marker>
+                  </agm-map>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Save changes</button>
+                </div>
+              </div>
+            </div>
+          </div> -->
+
+    </div>
+</div>
+</div>
+</div>
+
+<div class="" *ngIf="verfiyemail" >
+    <div class="card" style="    margin-left: 29%;
+    margin-right: 36%;">
+      <div class="card-header" style="text-align: center;background-color: white;color: green;font-weight: 700;">
+        Registation
+      </div>
+      <div class="card-body">
+       <p>Thank You For Your Registration !! Go and check your email. click on the link</p>
+      </div>
+    </div>
+  </div>

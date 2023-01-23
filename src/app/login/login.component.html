@@ -1,0 +1,68 @@
+
+
+<section class="">
+    <div class="px-2 mb-5 px-md-5 text-center text-lg-start">
+        <div class="container">
+            <div class="row gx-lg-5 align-items-center login-form">
+                <div class="col-lg-7 mb-5 mb-lg-0">
+                </div>
+
+                <div class="col-lg-5 mb-5 mb-lg-0" style="    margin-right: 1px;
+                margin-top: 5%;
+                margin-left: 30%;">
+                    <div class="card">
+                        <div class="card-body py-3 px-md-5">
+                            <h4 style="text-align: center;margin-bottom: 20px;">Login</h4>
+                            <form (submit)="login_now()" [formGroup]="login" #ngForm="ngForm">
+                                <p class="form-label error-message" *ngIf="isdisplay"
+                                        for="form3Example4" style="color: red;">Incorrect email or password</p>
+                                <div class="form-outline mb-4">
+                                    <label class="form-label" for="form3Example3">Email</label>
+                                    <input type="email" id="form3Example3" class="form-control"
+                                         formControlName="email" />
+                                    <label class="form-label error-message"
+                                        *ngIf="submitted && login.get('email')?.invalid"
+                                        for="form3Example4" style="color: red;">Enter Valid email!</label>
+                                </div>
+                                <div class="form-outline mb-4">
+                                    <label class="form-label" for="form3Example4">Password</label>
+
+                                    <div class="password-field">
+                                        <input type="password" id="form3Example4" class="form-control"
+                                            formControlName="password" #show_now />
+                                        <i class="fa fa-eye show_now" (click)="show_password(show_now,$event )"></i>
+                                    </div>
+                                    <label class="form-label error-message" for="form3Example4"
+                                        *ngIf="submitted && login.get('password')?.invalid" style="color: red;">Enter Password</label>
+                                    <label class="form-label error-message" *ngIf="error_message !=null"
+                                        for="form3Example4">{{error_message}}</label>
+                                </div>
+                                <div class="row mb-4">
+                                    <div class="col d-flex justify-content-center">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="true"
+                                                id="form2Example31" formControlName="rememeber" />
+                                            <label class="form-check-label" for="form2Example31"> Remember me </label>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <a href="#/forgotPassword">Forgot password?</a>
+                                    </div>
+                                </div>
+                                <div class="form-check  justify-content-center mb-4">
+                                    <button type="submit" class="btn btn-primary btn-block mb-4"
+                                        style="float: right;width: 49%;">
+                                       Log In
+                                    </button>
+
+                                    <button class="btn btn-secondary mt-4" 
+                                    routerLink="/CandidateRegistration" style="width: 30%; ">Register</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,399 @@
+<app-sidebar></app-sidebar>
+<div class="container-fluid">
+    <div class="row" style="margin: 0px">
+        <div class="col-12">
+            <h4 style="text-align: center; font-size: 19px; margin-top: 10px;    color: #a70a0a;">Advance Candidate
+                Registration
+            </h4>
+        </div>
+
+
+        <div class="tab-content" style="margin: 0; padding: 0px">
+            <div #page1 id="menu0" class="container tab-pane active">
+                <br />
+                <div class="col-12">
+                    <div class="form_controller">
+                        <form [formGroup]="AdvanceCandidateform">
+                            <div class="row">
+                                <div class="form_singlerow" >
+                                    <label for="categoryImage">KeySkill: <span class="required">*</span></label>
+                                    <input type="text" id="categoryImage" formControlName="keyskill" >
+                                </div>
+                                <!-- <div class="form_singlerow">
+                                    <label for="categoryImage">Experience Month: <span class="required">*</span></label>
+                                    <input type="text" id="categoryImage" formControlName="experienceMonth">
+                                </div> -->
+                                <div class="row align-items-start">
+                                    <span style="color: red;text-align:center;margin-left: 44px;margin-bottom: 14px;"
+                                        *ngIf="formsubmited && AdvanceCandidateform.get('keyskill')?.invalid">Enter
+                                        the keyskill</span>
+                                </div>
+
+                                <div style="margin-bottom: 23px;">
+                                    <label for="selectstreet" style="    margin-top: 15px;">Experience:</label>
+                                    <b><label for="selectstreet" style="        margin-left: 62px;" >Year:</label></b>
+                                <select id="year" name="year" formControlName="experienceYear" style="margin-left: 11px;" >
+                                    <option [ngValue]="null" disabled selected>year</option>
+                                    <option value="00">0 </option>
+                                    <option value="1">1 </option>
+                                    <option value="2">2 </option>
+                                    <option value="3">3 </option>
+                                    <option value="4">4 </option>
+                                    <option value="5">5 </option>
+                                    <option value="6">6 </option>
+                                    <option value="7">7 </option>
+                                    <option value="8">8 </option>
+                                    <option value="9">9 </option>
+                                    <option value="10">10 </option>
+                                    <option value="11">11 </option>
+                                    <option value="12">12 </option>
+                                    <option value="13">13 </option>
+                                    <option value="14">14 </option>
+                                    <option value="15">15 </option>
+                                    <option value="16">16 </option>
+                                    <option value="17">17 </option>
+                                    <option value="18">18 </option>
+                                    <option value="19">19 </option>
+                                    <option value="20">20 </option>
+                                    <option value="21">21 </option>
+                                    <option value="22">22 </option>
+                                    <option value="23">23 </option>
+                                    <option value="24">24 </option>
+                                    <option value="25">25 </option>
+                                    <option value="26">26 </option>
+                                   
+                                   
+                                </select>
+                              
+                            <b><label for="selectstreet" >Month:</label></b>
+                                <select id="year" name="year" formControlName="experienceMonth" style="    margin-left: -2px;">
+                                    <option [ngValue]="null" disabled selected>Month</option>
+                                    <option value="00">0 </option>
+                                    <option value="1">1 </option>
+                                    <option value="2">2 </option>
+                                    <option value="3">3 </option>
+                                    <option value="4">4 </option>
+                                    <option value="5">5 </option>
+                                    <option value="6">6 </option>
+                                    <option value="7">7 </option>
+                                    <option value="8">8 </option>
+                                    <option value="9">9 </option>
+                                    <option value="10">10 </option>
+                                    <option value="11">11 </option>
+                                 
+                            
+                                </select>
+                              
+                            </div>
+                            <div class="row align-items-start">
+                                <span style="color: red;text-align:center;margin-left: 60px;margin-bottom: 14px;"
+                                    *ngIf="formsubmited && AdvanceCandidateform.get('experienceYear')?.invalid && AdvanceCandidateform.get('experienceMonth')?.valid">Enter
+                                    experienceYear</span>
+                                    <span style="color: red;text-align:center;margin-left: 60px;margin-bottom: 14px;"
+                                    *ngIf="formsubmited && AdvanceCandidateform.get('experienceMonth')?.invalid && AdvanceCandidateform.get('experienceYear')?.valid">Enter
+                                    experienceMonth</span>
+                            </div>
+
+
+                           
+                                <div class="form_singlerow">
+                                    <label for="categoryImage">Salary Range: <span class="required">*</span></label>
+                                    <input type="text" id="categoryImage" style="    width: 125px;" formControlName="salaryRangeFrom">
+                                    <input type="text" id="categoryImage" style="    width: 125px;" formControlName="salaryRangeTo">
+                                </div>
+
+                                <div class="row align-items-start">
+                                    <span style="color: red;text-align:center;margin-left: 60px;margin-bottom: 14px;"
+                                        *ngIf="formsubmited && AdvanceCandidateform.get('salaryRangeFrom')?.invalid && AdvanceCandidateform.get('salaryRangeTo')?.valid">Enter
+                                         salary From</span>
+                                        <span style="color: red;text-align:center;margin-left: 60px;margin-bottom: 14px;"
+                                        *ngIf="formsubmited && AdvanceCandidateform.get('salaryRangeTo')?.invalid && AdvanceCandidateform.get('salaryRangeFrom')?.valid">Enter
+                                        salary To</span>
+                                </div>
+
+                                <!-- <div>
+                                    <label for="selectstreet" style="    margin-top: 15px;">Salary Range: :</label>
+                                    <b><label for="selectstreet" style="        margin-left: 62px;" >from:</label></b>
+                                <select id="year" name="year" formControlName="experienceYear" style="     margin-left: 11px;">
+                                    <option>year</option>
+                                    <option value="0">1 LPA</option>
+                                    <option value="1"></option>
+                                    <option value="2"></option>
+                                    <option value="3"></option>
+                                    <option value="4"></option>
+                                
+                               
+                                </select>
+                            <b><label for="selectstreet" >Month:</label></b>
+                                <select id="year" name="year" formControlName="experienceMonth" style="    margin-left: -2px;">
+                                    <option>To</option>
+                                  
+                                    <option value="1">1 month</option>
+                                    <option value="2">2 month</option>
+                                    <option value="3">3 month</option>
+                                    <option value="4">4 month</option>
+                                </select>
+                            </div> -->
+
+
+                              
+
+                                <!-- <div class="form_singlerow">
+                                    <label for="categoryImage">Native Address: <span class="required">*</span></label>
+                                    <input type="text" id="categoryImage" formControlName="locationNative">
+                                </div> -->
+
+                                <div class="col-sm-12">
+                                    <div class="form_singlerow">
+                                        <label for="categoryImage">Current Address: <span class="required">*</span></label>
+                                      <input class="form-control" ngx-google-places-autocomplete [options]="options"
+                                        (onAddressChange)="handleAddressChange($event)" formControlName="locationCurrent"/>
+                                    </div>
+                                  </div>
+                                <!-- <div class="form_singlerow">
+                                    <label for="categoryImage">Current Address: <span class="required">*</span></label>
+                                    <input type="text" id="categoryImage" formControlName="locationCurrent">
+                                </div> -->
+                                <div class="form_singlerow">
+                                    <label for="categoryImage">Qualification: <span class="required">*</span></label>
+                                    <input type="text" id="categoryImage" formControlName="education">
+                                </div>
+                                <div class="form_singlerow">
+                                    <label for="categoryImage">Specification: <span class="required">*</span></label>
+                                    <input type="text" id="categoryImage" formControlName="specification">
+                                </div>
+                                <div class="form_singlerow">
+                                    <label for="categoryImage">University: <span class="required">*</span></label>
+                                    <input type="text" id="categoryImage" formControlName="university">
+                                </div>
+
+                                <!-- <div class="form_singlerow">
+                                    <label for="selectstreet">University:</label>
+                                <select id="year" name="year" formControlName="availability" style="    margin-left: 60px;">
+                                    <option>Select</option>
+                                    <option value="Pondicherry University">Pondicherry University</option>
+                                    <option value="Anna University">Anna University</option>
+                                    <option value="Bharathiyar University">Bharathiyar University</option>
+                                   
+                     
+                                </select>
+                            </div> -->
+
+                                <div>
+                                    <label for="selectstreet">Course Type:</label>
+
+                                    <input name="order_Type" type="radio" value="Full Time" formControlName="courseType"
+                                        style="margin-left: 80px;">Full Time
+                                    <input name="order_Type" type="radio" value="Part Time" formControlName="courseType" style="margin-left: 10px;">Part Time
+                                    <input name="order_Type" type="radio" value="Distance" formControlName="courseType"> Distance
+                                </div>
+
+
+                                <div>
+                                    <label for="selectstreet" style="    margin-top: 15px;"> Passed Out Year:</label>
+                                <select id="year" name="year" formControlName="passingYear" style="    margin-left: 60px;">
+                                    <option [ngValue]="null" disabled selected>year</option>
+                                    <option value="1980">1980</option>
+                                    <option value="1981">1981</option>
+                                    <option value="1982">1982</option>
+                                    <option value="1983">1983</option>
+                                    <option value="1984">1984</option>
+                                    <option value="1985">1985</option>
+                                    <option value="1986">1986</option>
+                                    <option value="1987">1987</option>
+                                    <option value="1988">1988</option>
+                                    <option value="1989">1989</option>
+                                    <option value="1990">1990</option>
+                                    <option value="1991">1991</option>
+                                    <option value="1992">1992</option>
+                                    <option value="1993">1993</option>
+                                    <option value="1994">1994</option>
+                                    <option value="1995">1995</option>
+                                    <option value="1996">1996</option>
+                                    <option value="1997">1997</option>
+                                    <option value="1998">1998</option>
+                                    <option value="1999">1999</option>
+                                    <option value="2000">2000</option>
+                                    <option value="2001">2001</option>
+                                    <option value="2002">2002</option>
+                                    <option value="2003">2003</option>
+                                    <option value="2004">2004</option>
+                                    <option value="2005">2005</option>
+                                    <option value="2006">2006</option>
+                                    <option value="2007">2007</option>
+                                    <option value="2008">2008</option>
+                                    <option value="2009">2009</option>
+                                    <option value="2010">2010</option>
+                                    <option value="2011">2011</option>
+                                    <option value="2012">2012</option>
+                                    <option value="2013">2013</option>
+                                    <option value="2014">2014</option>
+                                    <option value="2015">2015</option>
+                                    <option value="2016">2016</option>
+                                    <option value="2017">2017</option>
+                                    <option value="2018">2018</option>
+                                    <option value="2019">2019</option>
+                                    <option value="2020">2020</option>
+                                    <option value="2021">2021</option>
+                                    <option value="2022">2022</option>
+                                    <option value="2020">2023</option>
+                                    <option value="2021">2024</option>
+                                    <option value="2022">2025</option>
+                                </select>
+                            </div>
+
+
+                            <div style="display: flex; align-items: center;    margin-top: 10px;">
+                                <div>Grading System :</div>
+                                <div style="display: flex; align-items: center;">
+                                  <div style="display: flex; align-items: center; margin-left: 70px;">
+                                    <label for="">CGPA</label><input type="radio" formControlName="gradingSystem"
+                                      name="Disputestatus" value="cgpa" id="">
+                                  </div>
+                                  <div style="display: flex; align-items: center; margin-left: 20px;"><label for="">Percentage </label><input type="radio"
+                                      formControlName="gradingSystem" name="Disputestatus" value="percentage" id=""></div>
+                                </div>
+                              </div>
+                
+                              <div class="row align-items-start">
+                                <span style="color: red;text-align:center;margin-left: 88px;margin-bottom: 14px;"
+                                    *ngIf="formsubmited && AdvanceCandidateform.get('gradingSystem')?.invalid ">Select
+                                    the GradingSystem</span>
+                            </div>
+                
+                
+                              <div style="display: flex;justify-content: space-between;margin-right: 40%;    margin-top: 15px;"
+                                *ngIf="AdvanceCandidateform.get('gradingSystem')?.value=='cgpa'">
+                                <span>
+                                  <b>Enter CGPA:</b>
+                                </span>
+                                <input type="text" style="  border-radius: 18px;    margin-bottom: 12px;" formControlName="mark">
+                              </div>
+                              <!-- <div class="row align-items-start">
+                                <span style="color: red;text-align:center;margin-left: 88px;margin-bottom: 14px;"
+                                    *ngIf="formsubmited && AdvanceCandidateform.get('mark')?.invalid ">Enter
+                                    the CGPA</span>
+                            </div> -->
+
+                              <div style="display: flex;justify-content: space-between;margin-right: 40%;    margin-top: 15px;"
+                                *ngIf="AdvanceCandidateform.get('gradingSystem')?.value=='percentage'">
+                                <span>
+                                  <b>Enter Percentage:</b>
+                                </span>
+                                <input type="text" style="  border-radius: 18px;    margin-bottom: 12px;" formControlName="mark">
+                              </div>
+                              <!-- <div class="row align-items-start">
+                                <span style="color: red;text-align:center;margin-left: 88px;margin-bottom: 14px;"
+                                    *ngIf="formsubmited && AdvanceCandidateform.get('mark')?.invalid ">Enter
+                                    the mark</span>
+                            </div> -->
+
+
+
+                            <div class="form_singlerow">
+                                <label for="selectstreet">Notice Period:</label>
+                            <select id="year" name="year" formControlName="availability" style="    margin-left: 60px;">
+                                <option [ngValue]="null" disabled selected>Select</option>
+                                <option value="90 Days">90 Days</option>
+                                <option value="60 Days">60 Days</option>
+                                <option value="30 Days">30 Days</option>
+                                <option value="15 Days">15 Days</option>
+                 
+                            </select>
+                        </div>
+
+                        <div class="form_singlerow">
+                            <label for="categoryImage">Current Skill Set: <span class="required">*</span></label>
+                            <input type="text" id="categoryImage" formControlName="currentSkill" >
+                        </div>
+                        <div class="row align-items-start">
+                            <span style="color: red;text-align:center;margin-left: 88px;margin-bottom: 14px;"
+                                *ngIf="formsubmited && AdvanceCandidateform.get('currentSkill')?.invalid ">Enter
+                                the currentSkill</span>
+                        </div>
+                        <div class="form_singlerow">
+                            <label for="categoryImage">Preferred Skill Set: <span class="required">*</span></label>
+                            <input type="text" id="categoryImage" formControlName="preferredSkill" >
+                        </div>
+                        <div class="row align-items-start">
+                            <span style="color: red;text-align:center;margin-left: 88px;margin-bottom: 14px;"
+                                *ngIf="formsubmited && AdvanceCandidateform.get('preferredSkill')?.invalid ">Enter
+                                the preferredSkill</span>
+                        </div>
+                        <!-- <div class="form_singlerow">
+                            <label for="categoryImage">Secondary Skill Set: <span class="required">*</span></label>
+                            <input type="text" id="categoryImage" formControlName="secondarySkill" >
+                        </div> -->
+                        <!-- <div class="row align-items-start">
+                            <span style="color: red;text-align:center;margin-left: 88px;margin-bottom: 14px;"
+                                *ngIf="formsubmited && AdvanceCandidateform.get('secondarySkill')?.invalid ">Enter
+                                the secondarySkill</span>
+                        </div> -->
+                        <!-- <div class="form_singlerow">
+                            <label for="categoryImage">Past Skill Set: <span class="required">*</span></label>
+                            <input type="text" id="categoryImage" formControlName="pasrSkill" >
+                        </div> -->
+                        <!-- <div class="row align-items-start">
+                            <span style="color: red;text-align:center;margin-left: 88px;margin-bottom: 14px;"
+                                *ngIf="formsubmited && AdvanceCandidateform.get('pasrSkill')?.invalid ">Enter
+                                the pasrSkill</span>
+                        </div> -->
+
+                        <div class="form_singlerow">
+                            <label for="selectstreet">Gender:</label>
+
+                            <input name="order_TypeM" type="radio" value="Male" formControlName="gender"
+                                style="margin-left: 80px;"> Male
+                            <input name="order_TypeM" type="radio" value="Female" formControlName="gender" style="margin-left: 10px;">
+                            Female
+                            <input name="order_TypeM" type="radio" value="Others" formControlName="gender"
+                            style="margin-left: 80px;"> Others
+                           
+                        </div>
+                        <div class="row align-items-start">
+                            <span style="color: red;text-align:center;margin-left: 88px;margin-bottom: 14px;"
+                                *ngIf="formsubmited && AdvanceCandidateform.get('gender')?.invalid ">Select
+                                the Gender</span>
+                        </div>
+
+                        <div class="form_singlerow"> 
+                            <label for="selectstreet">Marital Status:</label>
+
+                            <input name="statyus" type="radio" value="Single" formControlName="maritalStatus"
+                                style="margin-left: 80px;">
+                            Single
+                            <input name="statyus" type="radio" value="Married" formControlName="maritalStatus" style="margin-left: 10px;">
+                            Married
+                           
+                        </div>
+                        <div class="row align-items-start">
+                            <span style="color: red;text-align:center;margin-left: 88px;margin-bottom: 14px;"
+                                *ngIf="formsubmited && AdvanceCandidateform.get('maritalStatus')?.invalid ">Select
+                                the maritalStatus</span>
+                        </div>
+
+                        <!-- <div class="form_singlerow">
+                            <label for="categoryImage">Profile Picture</label>
+                            <input type="file" id="categoryImage" formControlName="image" (change)="selectedImg1($event)">
+                        </div> -->
+
+                        <div class="form_singlerow">
+                            <label for="categoryImage">Profile Picture</label>
+                            <input type="file" id="categoryImage" formControlName="image" accept="image/gif, image/jpeg, image/png" (change)="selectedImg1($event)">
+                        </div>
+                        <div class="row align-items-start">
+                            <span style="color: red;text-align:center;margin-left: 28px;"
+                              *ngIf="formsubmited && AdvanceCandidateform.get('image')?.invalid">Upload image</span>
+                          </div>
+
+
+                                <button style="padding: 0px 6px; margin-left: 41%; width: 80px;margin-top: 20px"
+                                    class="btn btn-primary" (click)="submit()">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,248 @@
+
+
+<app-employerside-bar></app-employerside-bar>
+<div  class="container-fluid">
+    <div class="col-lg-12 mb-2" >
+    <h5 style="text-align: center;color: #d34c4c;    margin-top: 12px;">Manage Plan</h5>
+    
+    <div class="col-lg-6 col-sm-12 col-xs-12 col-md-12 col-xl-6">
+      <!-- <div class="order_session" style="margin: 12px 0;margin: 12px 0;">
+        <a style="    padding: 11px 6px;
+        margin: 10px 5px 10px 0;
+        margin-left: 20%;
+        margin-top: -2px;" class="btn btn-primary"
+          [routerLink]="['../CreatePlanJobt']">Add Plan</a>
+     
+      </div> -->
+
+    </div>
+    <div class="table-responsive-sm table_all_orders" style="    width: 78%;
+    overflow-x: auto;
+    margin-left: 20%;">
+      <div class="col-12 mt-3">
+
+      <table class="table table-bordered purchese_order_disign">
+        <thead style="color: #177247;">
+          <tr>
+            <th scope="col">S:no</th>
+            <th scope="col">Plan Created Date</th>
+            <th scope="col">Plan Name</th>
+            <th scope="col">Cost</th>
+            <th scope="col">No:of:Post</th>
+            <th scope="col">No:of:CV Access</th>
+            <th scope="col">Status</th>
+            <th scope="col">Action </th>
+          </tr>
+        </thead>
+        <tbody >
+            <tr *ngFor="let item of plandata; let i=index">
+              <td>{{i+1}}</td>
+              <td>{{item.date}}</td>
+              <td>
+                <!-- <a style="margin-right: 13px;" [routerLink]="['']"
+                 [queryParams]="{ id: item._id }">{{item.planName}}</a> -->
+
+                 <button class="btn btn-link" data-bs-toggle="modal" data-bs-target="#exampleModalCenter"
+                                          (click)="shopdata(item.planName,item.offer,item.validityOfPlan,item.validityOfPlanExpiry,item.jobPostVAlidityExpiry,item.jobPostVAlidity,item.numberOfMassMailer,item.cost)">
+                                          {{ item.planName }}
+                                        </button>
+              </td>
+              <td>{{item.cost}}</td>
+              <td>{{item.jobPost}}</td>
+              <td>{{item.cvAccess}}</td>
+              <td >{{item.paymentStatus}}</td>
+              <td >
+                <button type="submit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal2" [disabled]="item.paymentStatus != 'Pending'" (click)="OdatPay(item._id,item.planName,item.cost,item.offer)">
+                  pay
+                </button>
+        </td>
+            </tr>
+          </tbody>
+      </table>
+    </div>
+  </div>
+
+
+  <div class="modal fade mt-5" id="exampleModalCenter">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" id="exampleModalLabel" style="text-align:center" >
+            <div >{{ this.planName}}</div>
+          </h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row" style=" padding-right: 20px"
+            >
+            <div class="table table-fixed" style="max-width: 90%; margin: auto">
+              <div>
+              
+
+                <div style="display: flex; justify-content: space-between">
+                  <span>
+                    <b>No:Of:MassMailer:</b>
+                  </span>
+                  <span style="width: 60%">:{{this.numberOfMassMailer}} </span>
+                </div>
+                <div style="display: flex; justify-content: space-between">
+                  <span>
+                    <b>validity Of Plan:</b>
+                  </span>
+                  <span style="width: 60%">:{{this.validityOfPlan}} Days</span>
+                </div>
+                <div style="display: flex; justify-content: space-between">
+                  <span>
+                    <b>Job Post Validity:</b>
+                  </span>
+                  <span style="width: 60%">:{{this.jobPostVAlidity}} Days</span>
+                </div>
+           
+                <div style="display: flex; justify-content: space-between">
+                  <span>
+                    <b>Offer Price:</b>
+                  </span>
+                  <span style="width: 60%">:{{this.offer}} Rupees</span>
+                </div>
+         
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content" >
+        <form>
+          <div class="modal-header" style="margin-top: 14px;" >
+            <b style="margin-left: 36%;">Payment Details</b>
+            <button type="button" data-bs-dismiss="modal" class="btn-close" aria-label="Close"></button>
+          </div>
+
+          <div class="table table-fixed" style="max-width: 90%;margin: auto;" >
+            <div style="font-size: 12px">
+            <form [formGroup]="PaymentDetails" >
+
+              <div style="display: flex; justify-content: space-between">
+                <span>
+                  <b style="color: rgb(48, 40, 209);">Plan Amount :</b>
+                </span>
+                <span style="width: 60%"><b>: {{this.costpay}}</b> </span>
+              </div>
+              <div style="display: flex; justify-content: space-between">
+                <span>
+                  <b style="color: rgb(48, 40, 209);">Offer Amount :</b>
+                </span>
+                <span style="width: 60%"><b>:{{this.offerpay }}</b> </span>
+              </div>
+              <div style="display: flex; justify-content: space-between">
+                <span>
+                  <b style="color: rgb(48, 40, 209);">Paying Amount :</b>
+                </span>
+                <span style="width: 60%"><b>:{{this.costpay - this.offerpay }}</b> </span>
+              </div>
+
+
+              <div style="display: flex; justify-content: space-between">
+                <span>
+                  <b style="color:rgb(48, 40, 209);">Payable Amount:</b>
+                </span>
+           
+                <input type="text" style="border-radius: 18px; margin-right: 27%;   margin-bottom: 12px;"  min="1"
+                step="1"
+                maxlength="10"
+                onkeypress="return event.keyCode === 8 || event.charCode >= 48 && event.charCode <= 57"
+                ng-pattern="/^[0-9.]*$/" formControlName="payAmount"   >
+              </div>
+
+              <!-- <div style="display: flex; justify-content: space-between">
+                <span>
+                  <b style="color:rgb(48, 40, 209);">Paid to:</b>
+                </span>
+           
+                <input type="text" style="border-radius: 18px; margin-right: 27%;   margin-bottom: 12px;"  min="1"
+                step="1"
+               
+                formControlName="PaidToBe"   >
+              </div> -->
+
+              <div style="display: flex;justify-content: space-between;align-items: center;"
+        *ngIf="this.costpay - this.offerpay  != PaymentDetails.get('payAmount')?.value ">
+        <div style="width: 40%;padding: 0;"></div>
+        
+        <div style="    width: 99%;
+        color: #e01a34;
+        padding: 0;
+        padding-left: 10px;
+        padding-bottom: 5px;
+        margin-left: 55px;">
+          Enter Valid Amount
+        </div>
+      </div>
+
+
+              
+                  <div style="display: flex; " >
+
+                          <label for="selectcategory"><b style="color:rgb(48, 40, 209);">Select Payment Type:</b></label>
+                          <select name="" id="selectcategory" 
+                          formControlName="cashType" style="border-radius: 28px;
+                          padding: 5px;
+                          margin-left: 57px;
+                          padding-right: 44px;
+                      " >
+                          <option [ngValue]="null" disabled selected>Select Type</option>
+                              <option value="Cash">Cash</option>
+                              <option value="UPI">UPI</option>
+                              <option value="HandCash">Net Banking</option>
+                              
+                          </select>
+                          </div>
+
+                          <div style="display: flex;justify-content: space-between;align-items: center;"
+        *ngIf=" PaymentDetails.get('cashType')?.invalid ">
+        <div style="width: 40%;padding: 0;"></div>
+        
+        <div style="    width: 99%;
+        color: #e01a34;
+        padding: 0;
+        padding-left: 10px;
+        padding-bottom: 5px;
+        margin-left: 55px;">
+         Select Payment Method
+        </div>
+      </div>
+
+            
+              <div>
+              </div>
+            </form>
+          </div>
+        
+          <button type="button" class="btn btn-primary" style="margin-bottom: 10px;margin-left: 40%;"  data-bs-dismiss="modal" (click)="submitPay()">Pay</button>
+          <button type="button" class="btn btn-secondary" style="margin-bottom: 10px;" data-bs-dismiss="modal">Close</button>
+        </div>
+        </form>
+    
+      </div>
+    </div>
+    </div>
+      </div>
+      </div>
+      <router-outlet></router-outlet>
+      
+
+   
+    
+    
+    
+    
+    
+    

@@ -1,0 +1,114 @@
+<app-employerside-bar></app-employerside-bar>
+<main class="main_content profilepage">
+    <!-- <app-header></app-header> -->
+    <div *ngIf="route.children.length === 0" class="container-fluid">
+        <div class="container-fluid">
+            <div class="row" style="margin:0px">
+                <div class="col-12">
+                    <h1 style="text-align: center;font-size: 25px ; margin-top: 10px;  color: rgb(171, 15, 15) ">View
+                        Candidate Details
+                    </h1>
+                </div>
+
+                <div class="col-lg-6 col-sm-12 col-xs-12 col-md-12 col-xl-6" style="    margin-left: 10px;">
+                </div>
+                <!-- <div class="col-lg-6 col-sm-12 col-xs-12 col-md-12 col-xl-6">
+              <div class="order_session" style="margin: 12px 0;margin: 12px 0;">
+                <a style="padding: 2px 6px; margin: 10px 5px 10px 0;;margin-left: 73%;" class="btn btn-primary"
+                  [routerLink]="['AdvanceDetailsCandidate']">Edit Advance Details</a>
+              </div>
+            </div> -->
+                <div class="container">
+                    <div class="tab-content" style="margin: 0; padding: 0px;">
+                        <div id="menu0" class="container tab-pane active">
+                            <div class="col-12">
+                                <div class="form_controller">
+                                    <form>
+                                        <div class="table table-fixed" style="max-width: 90%; margin: auto"
+                                            >
+                                            <div>
+                                                <div style="display: flex; justify-content: space-between">
+                                                    <span>
+                                                        <b>keyskill:</b>
+                                                    </span>
+                                                    <span style="width: 60%">:
+                                                        <span> <b > {{this.keyskilldata == '' ? 'nil' : this.keyskilldata }},</b></span>
+                                                    </span>
+                                                    </div>
+                                                   
+                                                <div style="display: flex; justify-content: space-between">
+                                                    <span>
+                                                        <b>KeyWords:</b>
+                                                    </span>
+                                                    <span style="width: 60%">:
+                                                        <span><b > {{this.anyKeywords == '' ? 'nil' : this.anyKeywords }},</b></span>
+                                                    </span>
+                                                    <!-- <b style="color:red"> {{this.anyKeywords == '' ? 'nil' : this.anyKeywords }},</b> -->
+                                                </div>
+                                                <div style="display: flex; justify-content: space-between">
+                                                    <span>
+                                                        <b>Education:</b>
+                                                    </span>
+                                                    <span style="width: 60%">:<b > {{this.courseTypedata == '' ? 'nil' : this.courseTypedata }}</b></span>
+                                                </div>
+                                               
+                                                <!-- <div style="display: flex; justify-content: space-between">
+                                                    <span>
+                                                        <b>Employment:</b>
+                                                    </span>
+                                                    <span style="width: 60%">:</span>
+                                                </div> -->
+
+                                                <div style="display: flex; justify-content: space-between">
+                                                    <span>
+                                                        <b>Experience:</b>
+                                                    </span>
+                                                    <span style="width: 60%">:<b >{{this.experienceMonthFromdata == '' ? 'nil' : this.experienceMonthFromdata }} - {{this.experienceMonthTodata == '' ? 'nil' : this.experienceMonthTodata }}</b></span>
+                                                </div>
+                                                
+                                                
+
+
+
+                                                <div style="display: flex; justify-content: space-between">
+                                                    <span>
+                                                        <b>Salary Range:</b>
+                                                    </span>
+                                                    <span style="width: 60%" >:<b >{{this.salaryFromdata == '' ? 'nil' : this.salaryFromdata }} - {{this.salaryTodata == '' ? 'nil' : this.salaryTodata }}</b></span>
+                                                </div>
+                                                
+                                                <div style="display: flex; justify-content: space-between">
+                                                    <span>
+                                                        <b>Location:</b>
+                                                    </span>
+                                                    <span style="width: 60%">: <b >{{this.locationCurrentdata == '' ? 'nil' : this.locationCurrentdata }}</b></span>
+                                                </div>
+
+                                               
+
+                                                <div class="second">
+                                                    <div class="col-md-12 text-center">
+                                                        <form>
+
+
+                                                            <button class="btn btn-primary btn-sm" type="submit"
+                                                                (click)="Remove()">Remove Search</button>
+                                                           
+                                                        </form>
+                                                    </div>
+                                                </div>
+
+
+
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

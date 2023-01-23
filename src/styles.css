@@ -1,0 +1,737 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+  background-color: white;
+}
+
+.table_all_orders table tbody tr td {
+  font-size: 13px;
+}
+
+.table_all_orders table thead tr th {
+  font-size: 14px;
+}
+
+
+/* html, body { height: 100%; }
+  body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; } */
+.form_singlerow {
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+
+}
+
+.form_controller {
+  margin: auto;
+  max-width: 510px;
+  background: #ffffff;
+  border-radius: 4px;
+  padding: 22px 10px;
+  box-shadow: 0 0 2px 2px #86929d;
+  margin-top: 20px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.flex_table {
+  display: flex;
+  justify-content: center;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 47px;
+  height: 23px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 15px;
+  width: 17px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked+.slider {
+  background-color: #2196F3;
+}
+
+input:focus+.slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked+.slider:before {
+  -webkit-transform: translateX(23px);
+  -ms-transform: translateX(23px);
+  transform: translateX(23px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/* Show all Css */
+
+.pageination li {
+  margin-right: 5px;
+}
+
+.pageination li a {
+  padding: 4px 11px;
+  font-size: 13px;
+}
+
+.form_controller {
+  margin: auto;
+  max-width: 510px;
+  background: #ffffff;
+  border-radius: 4px;
+  padding: 22px 26px;
+  box-shadow: 0 0 2px 2px #86929d;
+  margin-top: 20px;
+}
+
+.table_all_orders tbody tr {
+  cursor: pointer;
+}
+
+.table_all_orders tbody tr td div {
+  visibility: hidden;
+  margin-left: 10px;
+}
+
+.table_all_orders tbody tr:hover {
+  background-color: #f3f2f2;
+}
+
+.table_all_orders tbody tr:hover td div {
+  visibility: visible;
+}
+
+.show_tableinvoice {
+  display: table-cell;
+}
+
+.order_contact {
+  display: table-cell;
+}
+
+.container-fluid {
+  padding: 0px;
+  margin: 0px;
+}
+
+
+/* Add new css */
+
+.form_controller {
+  margin-bottom: 10px;
+}
+
+.form_singlerow select {
+  width: 60%;
+  padding: 5px 11px;
+  background: white;
+  border-radius: 4px;
+}
+
+.form_singlerow input[type=text],
+.form_singlerow input[type=number] {
+  width: 60%;
+  padding: 3px 11px;
+
+}
+
+.form_singlerow input[type=file] {
+  width: 60%;
+}
+
+.form_singlerow label {
+  width: 40%;
+}
+
+.form_singlerow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+
+.form_singlerow select option[disabled] {
+  color: #000000;
+  background: #ada5a5;
+}
+
+.radio_buttons {
+  width: 60%;
+}
+
+.radio_buttons div {
+  margin-right: 20px;
+}
+
+.radio_buttons div input[type=radio] {
+  margin-right: 6px;
+}
+
+label {
+  cursor: pointer;
+}
+
+.btn-file {
+  position: relative;
+  overflow: hidden;
+  padding: 1px 7px;
+}
+
+.btn-file input[type=file] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  min-width: 100%;
+  min-height: 100%;
+  font-size: 100px;
+  text-align: right;
+  filter: alpha(opacity=0);
+  opacity: 0;
+  outline: none;
+  background: white;
+  cursor: inherit;
+  display: block;
+}
+
+.error_message {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.error_message div {
+  width: 59%;
+  color: red;
+  font-weight: 400;
+}
+
+.success_message {
+  display: none;
+  position: relative;
+}
+
+.success_message_show {
+  display: block;
+  position: relative;
+}
+
+.success_message_show div {
+  max-width: 300px;
+  padding: 7px;
+  margin-top: 10px;
+  margin: auto;
+}
+
+
+
+/* Mobile View Css */
+
+
+
+.import_button {
+  float: right;
+  padding: 2px 6px;
+  margin-right: 5px;
+}
+
+.hover_show {
+  position: absolute;
+  top: 0px;
+  width: 100px;
+  height: 65px;
+  display: none;
+  justify-content: space-between;
+}
+
+.hover_show .btn-file {
+  background: #4f4fa9;
+  color: white;
+  border-radius: 20px;
+  font-size: 12px;
+  height: 22px;
+  margin: 4px;
+}
+
+.hover_show span:hover {
+  cursor: pointer;
+}
+
+.hover_show input {
+  width: 20px;
+  height: 20px;
+
+}
+
+.category_image:hover {
+  opacity: 0.6;
+}
+
+.category_image:hover~.hover_show {
+  display: flex;
+}
+
+.hover_show:hover {
+  display: flex;
+}
+
+.hover_show:hover>.category_image {
+  opacity: 0.6;
+
+}
+
+.form_radio {
+  display: flex;
+  align-items: center;
+}
+
+.form_radio div {
+  margin-right: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.form_radio div input {
+  margin-left: 5px;
+}
+
+.form_radio div label {
+  margin-right: 10px;
+}
+
+.table-fixed {
+  width: 100%;
+}
+
+.disabeld i {
+  color: gray;
+}
+
+.disabeld {
+  cursor: no-drop;
+}
+
+.filter {
+  position: relative;
+}
+
+.filter ol {
+  position: absolute;
+  width: 100%;
+  max-height: 300px;
+  width: 58%;
+  right: 0px;
+  margin-top: -5px;
+  background: #2e4051;
+  margin: -5px 7px 0px;
+  z-index: 10;
+  border-radius: 5px;
+  list-style-type: none;
+  padding: 0;
+  border: 1px solid gray;
+  box-shadow: 0 0 14px 2px #e5dcdc;
+  color: white;
+  overflow: auto;
+}
+
+.filter ol li {
+  padding: 6px 10px;
+
+}
+
+.filter ol li:hover {
+  background: white;
+  color: black;
+  cursor: pointer;
+}
+
+.product-title {
+  color: green;
+  font-weight: bold;
+  font-style: italic;
+  text-decoration: underline;
+}
+
+.row {
+  margin: 0px;
+  padding: 0px;
+}
+
+/* .filter_area form {
+    display: flex;
+    align-items: center;
+  } */
+
+.filter_area button {
+  /* margin-left: 10px; */
+}
+
+/* Show all Css */
+
+.pageination li {
+  margin-right: 5px;
+}
+
+.pageination li a {
+  padding: 4px 11px;
+  font-size: 13px;
+}
+
+.form_controller {
+  margin: auto;
+  max-width: 510px;
+  background: #ffffff;
+  border-radius: 4px;
+  padding: 22px 26px;
+  box-shadow: 0 0 2px 2px #86929d;
+  margin-top: 20px;
+}
+
+.table_all_orders tbody tr {
+  cursor: pointer;
+}
+
+.table_all_orders thead tr th {
+  font-size: 14px;
+}
+
+.table_all_orders tbody tr td {
+  font-size: 13px;
+}
+
+.table_all_orders tbody tr td div {
+  visibility: hidden;
+  margin-left: 10px;
+}
+
+.table_all_orders tbody tr:hover {
+  background-color: #f3f2f2;
+}
+
+.table_all_orders tbody tr:hover td div {
+  visibility: visible;
+}
+
+.show_tableinvoice {
+  display: table-cell;
+}
+
+.order_contact {
+  display: table-cell;
+}
+
+.container-fluid {
+  padding: 0px;
+  margin: 0px;
+}
+
+
+/* Add new css */
+
+.form_controller {
+  margin-bottom: 10px;
+}
+
+.form_singlerow select {
+  width: 60%;
+  padding: 5px 11px;
+  background: white;
+  border-radius: 4px;
+}
+
+.form_singlerow input[type=text] {
+  width: 60%;
+  padding: 3px 11px;
+
+}
+
+.form_singlerow input[type=file] {
+  width: 60%;
+}
+
+.form_singlerow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+
+.form_singlerow select option[disabled] {
+  color: #000000;
+  background: #ada5a5;
+}
+
+.quantity_value {
+  position: absolute;
+  right: 0;
+  padding: 5px 7px;
+  font-weight: bold;
+  color: green;
+}
+
+.radio_buttons {
+  width: 60%;
+}
+
+.radio_buttons div {
+  margin-right: 20px;
+}
+
+.radio_buttons div input[type=radio] {
+  margin-right: 6px;
+}
+
+.left-box .single-row {
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+label {
+  cursor: pointer;
+}
+
+.btn-file {
+  position: relative;
+  overflow: hidden;
+  padding: 1px 7px;
+}
+
+.btn-file input[type=file] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  min-width: 100%;
+  min-height: 100%;
+  font-size: 100px;
+  text-align: right;
+  filter: alpha(opacity=0);
+  opacity: 0;
+  outline: none;
+  background: white;
+  cursor: inherit;
+  display: block;
+}
+
+.error_message {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.error_message div {
+  width: 59%;
+  color: red;
+  font-weight: 400;
+}
+
+.success_message {
+  display: none;
+  position: relative;
+}
+
+.success_message_show {
+  display: block;
+  position: relative;
+}
+
+.success_message_show div {
+  max-width: 300px;
+  padding: 7px;
+  margin-top: 10px;
+  margin: auto;
+}
+
+.single_row {
+  /* max-width: 430px; */
+  /* padding: 10px; */
+  display: flex;
+}
+
+.single_row input {
+  margin-right: 10px;
+}
+
+.single_row span {
+  width: 60%;
+}
+
+.single_row span input,
+.single_row span select {
+  width: 94%;
+  height: 37px;
+}
+
+.single_row label {
+  margin-right: 30px;
+}
+
+.daily_report {
+  max-width: 700px;
+  height: 46px;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.shop_sorting {
+  max-width: 700px;
+  height: 46px;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+@media only screen and (max-width: 580px) {
+  .show_tableinvoice {
+    display: table-cell;
+  }
+
+  .order_contact {
+    display: none;
+  }
+
+  .form_controller {
+    margin: auto;
+    max-width: 510px;
+    background: #ffffff;
+    border-radius: 4px;
+    padding: 22px 10px;
+    box-shadow: 0 0 2px 2px #86929d;
+    margin-top: 20px;
+  }
+
+  .form_controller label {
+    font-size: 14px;
+  }
+
+  .single_row {
+    display: grid;
+  }
+}
+
+.form-group {
+  padding: 11px 20px;
+  border-right: 1px solid rgba(0, 0, 0, 0.31);
+}
+
+.form-group .form-input input {
+  border: 1px solid rgba(0, 0, 0, 0.28);
+  border-radius: 4px;
+  width: 100%;
+  padding: 5px 13px;
+  color: rgba(0, 0, 0, 0.28);
+  box-shadow: 0 0 1px 1px #ededed
+}
+
+.errro-message {
+  color: red;
+  text-align: right;
+  font-weight: 500;
+  padding: 0;
+  margin: 0;
+  height: 27px;
+  font-size: 13px;
+}
+
+.form-group .form-radio .radio-buttons {
+  display: flex;
+  align-items: center;
+}
+
+.form-group .form-radio .radio-buttons div {
+  margin-right: 20px;
+}
+
+.form-group .form-radio .radio-buttons div input {
+  margin-right: 5px;
+}
+
+.form-group .form-radio .radio-buttons div label {
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 600;
+}
+
+.form-group .form-file .resume-upload {
+  display: flex;
+  background: #44C2FD;
+  border-radius: 5px;
+  width: 50%;
+  padding: 8px;
+  font-size: 12px;
+  justify-content: space-between;
+  color: white;
+
+}
+
+.form-group .form-file .resume-upload span {
+  margin-left: 12px;
+}
+
+.form-group .form-submit {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.form-group .form-submit button {
+
+  background: #44C2FD;
+  border-radius: 5px;
+  color: white;
+  border: none;
+  padding: 4px 17px;
+  margin-top: 19px;
+}

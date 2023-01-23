@@ -1,0 +1,340 @@
+<!-- <main>
+  <div class="container" style="padding-top: 1px;">
+    <div class="register-form mt-4">
+      <div class="row">
+        <div class="col-6">
+          <p class="title-form"> <i class="fa fa-long-arrow-left"></i><span>Enter your Personnel And <br> Educational
+              Details</span></p>
+
+        </div>
+        <div class="col-6"></div>
+        <div class="col-6">
+          <div class="form-group">
+            <div class="form-input">
+              <input type="text" placeholder="Enter Full Name">
+              <p class="errro-message">
+                <span>Enter Full Name</span>
+              </p>
+            </div>
+            <div class="form-input">
+              <input type="text" placeholder="Enter Email ID">
+              <p class="errro-message">
+                <span>Enter Full Name</span>
+              </p>
+            </div>
+            <div class="form-input">
+              <input type="text" placeholder="Phone No">
+              <p class="errro-message">
+                <span>Enter Full Name</span>
+              </p>
+            </div>
+            <div class="form-input">
+              <input type="text" placeholder="Password">
+              <p class="errro-message">
+                <span>Enter Full Name</span>
+              </p>
+            </div>
+            <div class="form-input">
+              <input type="text" placeholder="Confirm Password">
+              <p class="errro-message">
+                <span>Enter Full Name</span>
+              </p>
+            </div>
+            <div class="form-radio">
+              <div class="radio-buttons">
+                <div> <input type="radio" id="Experienced"><label for="Experienced">I'm Experienced</label></div>
+                <div> <input type="radio" id="Fresher"><label for="Fresher">I'm Fresher</label></div>
+              </div>
+              <p class="errro-message">
+                <span>Enter Full Name</span>
+              </p>
+            </div>
+            <div class="form-file">
+              <input type="file" id="Uploadss" style="display: none;">
+              <label for="Uploadss" class="resume-upload"><span>Upload Resume</span><img src="../../assets/Vector-1.png"
+                  alt=""></label>
+              <p class="errro-message">
+                <span>Enter Full Name</span>
+              </p>
+            </div>
+            <div class="form-agree">
+              <p style="display: flex;align-items: center;font-size: 9px;justify-content: space-evenly; margin: 0">
+                <input type="checkbox" placeholder="Confirm Password">By
+                registering,
+                you agree to our <span>terms &
+                  conditions & privacy policy</span>
+              </p>
+              <p class="errro-message">
+                <span>Enter Full Name</span>
+              </p>
+            </div>
+            <div class="form-submit">
+              <button type="submit">Send OTP</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="form-views">
+            <div class="single-view">
+              <img src="../../assets/Search.png" alt="">
+              <span>Search your relevant job</span>
+            </div>
+            <div class="single-view">
+              <img src="../../assets/notification-bell-4428150.png" alt="">
+              <span>Quick Job Notification via
+                whats app and
+                Email</span>
+            </div>
+            <div class="single-view">
+              <img src="../../assets/Recruiter.png" alt="">
+              <span>1 lakh+ Recruiters</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main> -->
+
+
+
+<div class="container-fluid" *ngIf="verfiyemail ==false" >
+
+  <div class="row" style="margin: 0px">
+    <div class="col-12">
+      <h4 style="text-align: center; font-size: 19px; margin-top: 10px;    color: #a70a0a;">Candidate Registration
+      </h4>
+    </div>
+
+
+    <div class="tab-content" style="margin: 0; padding: 0px">
+      <div #page1 id="menu0" class="container tab-pane active">
+        <br />
+        <div class="col-12">
+          <div class="form_controller">
+            <form [formGroup]="Candidateform">
+              <!-- <p class="form-label error-message" *ngIf="displayMsg" for="form3Example4"
+                                    style="color: rgb(23, 16, 214);
+                                     margin-left: 75px;">Link Sent Your Email !! Please Check !!</p> -->
+              <p class="form-label error-message" *ngIf="isdisplay" for="form3Example4" style="color:red;
+                                    margin-left: 154px;
+                                ">Email Already Taken!!!</p>
+              <div class="row">
+
+                <div class="form_singlerow">
+                  <label for="categoryImage">Name: <span class="required">*</span></label>
+                  <input type="text" id="categoryImage" formControlName="name" min="1" step="1" maxlength="50"
+                    ng-pattern="/^[a-zA-Z\s]*$/" />
+                </div>
+                <div class="row align-items-start">
+                  <span style="    color: red;
+                                    text-align: center;
+                                    margin-left: 13px;
+                                 
+                                    margin-top: -16px;"
+                    *ngIf="formsubmited && Candidateform.get('name')?.invalid">Enter
+                    the name</span>
+                </div>
+
+                <div class="form_singlerow">
+                  <label for="categoryImage">Email ID: <span class="required">*</span></label>
+                  <input type="email" id="categoryImage" formControlName="email">
+                </div>
+                <div class="row align-items-start">
+                  <span style="    color: red;
+                                    text-align: center;
+                                    margin-left: 30px;
+                                   
+                                    margin-top: -16px;"
+                    *ngIf="formsubmited && Candidateform.get('email')?.invalid">Enter
+                    the valid Email</span>
+                </div>
+
+                <div class="form_singlerow">
+                  <label for="categoryImage">Mobile Number: <span class="required">*</span></label>
+                  <input type="text" id="categoryImage" formControlName="mobileNumber"
+                    onkeypress="return event.keyCode === 8 || event.charCode >= 48 && event.charCode <= 57"
+                    pattern="[6789][0-9]{9}" maxlength="10">
+                </div>
+                <div class="row align-items-start">
+                  <span style="    color: red;
+                                    text-align: center;
+                                    margin-left: 44px;
+                                    
+                                    margin-top: -16px;"
+                    *ngIf="formsubmited && Candidateform.get('mobileNumber')?.invalid">Enter
+                    the MobileNumber</span>
+                </div>
+
+                <div class="form_singlerow">
+                  <label for="categoryImage">Password: <span class="required">*</span></label>
+                  <input type="password" id="categoryImage" formControlName="password">
+                </div>
+                <div class="row align-items-start">
+                  <span style="    color: red;
+                                    text-align: center;
+                                    margin-left: 25px;
+                                   
+                                    margin-top: -16px;"
+                    *ngIf="formsubmited && Candidateform.get('password')?.invalid">Enter
+                    the password</span>
+                </div>
+
+                <!-- <p class="form-label error-message" *ngIf="isdisplay"
+                                for="form3Example4" style="color: red;    margin-left: 174px;">Password Must Be 8 characters</p>
+                                <p class="form-label error-message" *ngIf="isdisplay"
+                                for="form3Example4" style="color: red;    margin-left: 174px;">Password Must Be 1 letter</p>
+                                <p class="form-label error-message" *ngIf="isdisplay"
+                                for="form3Example4" style="color: red;    margin-left: 174px;">Password Must Be 1 number</p> -->
+
+                <div class="form_singlerow">
+                  <label for="categoryImage">Confirm Password: <span class="required">*</span></label>
+                  <input type="password" id="categoryImage" formControlName="confirmpassword">
+                </div>
+                <div class="row align-items-start">
+                  <span style="    color: red;
+                                    text-align: center;
+                                    margin-left: 51px;
+                                  
+    margin-bottom: 15px;
+
+                                    margin-top: -16px;"
+                    *ngIf="formsubmited && Candidateform.get('confirmpassword')?.invalid || formsubmited && Candidateform.get('password')?.value !=Candidateform.get('confirmpassword')?.value">Enter
+                    the confirmpassword</span>
+                </div>
+
+                <div>
+                  <label for="selectstreet">Work Status :<span class="required">*</span></label>
+
+                  <input name="order_Type" type="radio" value="Experienced" formControlName="workStatus"
+                    style="margin-left: 80px;">
+                  Experienced
+                  <input name="order_Type" type="radio" value="Fresher" formControlName="workStatus"
+                    style="margin-left: 10px;">
+                  Fresher
+
+                </div>
+
+                <div class="row align-items-start">
+                  <span style="    color: red;
+                                    text-align: center;
+                                    margin-left: 29px;
+                                    margin-top: -1px;"
+                    *ngIf="formsubmited && Candidateform.get('workStatus')?.invalid">Enter
+                    the workStatus</span>
+                </div>
+
+
+
+                <div class="form_singlerow">
+                  <label for="description">Resume <span class="required">*</span></label>
+
+
+                  <div style="width:60%; display: flex;justify-content: space-between; align-items: center;"
+                    *ngIf="resume !='' ? false:true">
+                    <input type="file" formControlName="resume" accept="application/pdf,.doc,.docx,application/msword"
+                      (change)="change_image($event)" style="width: 223px;" />
+
+                  </div>
+                </div>
+
+                <div class="row align-items-start">
+                  <span style="    color: red;
+                                    text-align: center;
+                                    margin-left: 30px;
+                                  
+                                    margin-top: -16px;" *ngIf="formsubmited && categoryiamge ==null">Upload Your Resume
+                    {{categoryiamge}}
+                  </span>
+                </div>
+                <!-- <div class="col-sm-12">
+                                  <button class="btn btn-link" data-bs-toggle="modal" data-bs-target="#exampleModal" style="margin-right: 97px;">Point Your Location</button>
+                                </div> -->
+                                <div class="row align-items-start">
+                                  <span style="    color: red;
+                                  text-align: center;
+                                  margin-left: 30px;
+                                  margin-top: -16px;"
+                                      *ngIf="formsubmited && categoryiamge ==null">Upload Your Resume {{categoryiamge}}
+                                  </span>
+                              </div>
+                              <!-- <div class="col-sm-12">
+                                <button class="btn btn-link" data-bs-toggle="modal" data-bs-target="#exampleModal" style="margin-right: 97px;">Point Your Location</button>
+                              </div> -->
+                              <div class="col-sm-12">
+                                <div class="form_singlerow">
+                                    <label for="categoryImage">Current Address: <span class="required">*</span></label>
+                                  <input class="form-control" ngx-google-places-autocomplete [options]="options"
+                                    (onAddressChange)="handleAddressChange($event)" formControlName="locationCurrent"/>
+                                </div>
+                              </div>
+                              <!-- <agm-map class="z-depth-1-half map-container" style="height: 400px;" [latitude]="lat" [longitude]="long"
+                              [zoom]="10" [usePanning]="true">
+                              <agm-marker (dragEnd)="draggEnded($event)" [markerDraggable]='true' [latitude]="parseFloat(latitude)"
+                                [longitude]="parseFloat(longtitude)"></agm-marker>
+
+                            </agm-map>
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">{{myAddres}}</h5>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div> -->
+                              <!-- <div class="row align-items-start">
+                                <span style="    color: red;
+                                text-align: center;
+                                margin-left: 13px;
+                                margin-top: -16px;"
+                                    *ngIf="formsubmited && Candidateform.get('lat')?.invalid">Point
+                                    the location</span>
+                            </div> -->
+                              <button style="padding: 0px 6px; margin-left: 41%; width: 80px;margin-top: 20px"
+                                  class="btn btn-primary" (click)="submit()">Register</button>
+                          </div>
+                      </form>
+                  </div>
+              </div>
+      </div>
+    </div>
+
+
+    <!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <div class="row mt-3">
+              <div class="col-6 offset-3">
+                <input class="form-control" ngx-google-places-autocomplete [options]="options"
+                  (onAddressChange)="handleAddressChange($event)" />
+              </div>
+            </div>
+            <h5 class="modal-title" id="exampleModalLabel">{{myAddres}}</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <agm-map class="z-depth-1-half map-container" style="height: 400px;" [latitude]="lat" [longitude]="long"
+              [zoom]="13" [usePanning]="true">
+              <agm-marker (dragEnd)="draggEnded($event)" [markerDraggable]='true' [latitude]="changefloat(latitude)"
+                [longitude]="changefloat(longtitude)"></agm-marker>
+            </agm-map>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+
+  </div>
+</div>
+<div class="" *ngIf="verfiyemail" >
+  <div class="card" style="    margin-left: 29%;
+  margin-right: 36%;">
+    <div class="card-header" style="text-align: center;background-color: white;color: green;font-weight: 700;">
+      Registation
+    </div>
+    <div class="card-body">
+     <p>Thank You For Your Registration !! Go and check your email. click on the link</p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,99 @@
+
+
+
+
+
+
+<app-sidebar></app-sidebar>
+<div  class="container-fluid">
+    <div class="col-lg-12 mb-2" >
+    <h5 style="text-align: center;color: #d34c4c;    margin-top: 12px;">Saved Job</h5>
+    
+    <div class="table-responsive-sm table_all_orders" style="    width: 72%;
+    overflow-x: auto;
+    margin-left: 17%;">
+      <div class="col-12 mt-3">
+
+      <table class="table table-bordered purchese_order_disign">
+        <thead style="color: #177247;">
+          <tr>
+            <th scope="col">S.no</th>
+            <th scope="col">Company Name</th>
+            <th scope="col">Designation</th>
+            <th scope="col">Location</th>
+            <th scope="col">Posted Date</th>
+            <th scope="col">View Deatils</th>
+            
+          </tr>
+        </thead>
+
+        <tbody> 
+            <tr *ngFor="let item of getdata; let i = index" style="font-size: 12px">
+               <td>{{i+1+(10*page)}}</td>
+               <td>{{item.companyName}}</td>
+               <td>{{item.designation}}</td>
+               <td>{{item.jobLocation}}</td>
+               <td>{{item.createdAt | date: 'YYYY-MM-dd'}}</td>
+               <td>
+                 <a style="margin-right: 13px;" [routerLink]="['SavedJobDisplayData']"
+                   [queryParams]="{ id: item.userId,_id: item._id }">View</a>
+               </td>
+             </tr> 
+            </tbody> 
+      </table>
+    </div>
+  </div>
+  <div style="display: flex; justify-content: right; align-items: center">
+    <ul class="pagination justify-content-end pageination">
+      <li style="font-size: 12px; padding: 8px 11px; font-weight: bold">
+        {{ pagetotal + "/" + totalcount }}
+      </li>
+      <li class="page-item">
+        <button [disabled]="displaycount == 0 || pagetotal == 0" ngClass="{{
+            displaycount == 0 || pagetotal == 0 ? 'disabeld' : 'active'
+          }}" class="page-link" (click)="pagination(3)">
+          <i class="fa fa-angle-double-left"></i>
+        </button>
+      </li>
+      <li class="page-item">
+        <button [disabled]="displaycount == 0 || pagetotal == 0" ngClass="{{
+            displaycount == 0 || pagetotal == 0 ? 'disabeld' : 'active'
+          }}" class="page-link" (click)="pagination(0)">
+          <i class="fa fa-angle-left"></i>
+        </button>
+      </li>
+      <li class="page-item">
+        <button class="btn btn-primary">{{ page + 1 }}</button>
+      </li>
+      <li class="page-item">
+        <button [disabled]="pagetotal - 1 == displaycount || pagetotal == 0" ngClass="{{
+            pagetotal - 1 == displaycount || pagetotal == 0
+              ? 'disabeld'
+              : 'active'
+          }}" class="page-link" (click)="pagination(1)">
+          <i class="fa fa-angle-right"></i>
+        </button>
+      </li>
+      <li class="page-item">
+        <button [disabled]="pagetotal - 1 == displaycount || pagetotal == 0" ngClass="{{
+            pagetotal - 1 == displaycount || pagetotal == 0
+              ? 'disabeld'
+              : 'active'
+          }}" class="page-link" (click)="pagination(2)">
+          <i class="fa fa-angle-double-right"></i>
+        </button>
+      </li>
+    </ul>
+  </div>
+      </div>
+      </div>
+      <router-outlet></router-outlet>
+      
+
+   
+    
+    
+    
+    
+    
+    

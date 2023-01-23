@@ -1,0 +1,140 @@
+
+<app-sidebar></app-sidebar>
+<div class="container-fluid">
+    <div class="row" style="margin: 0px">
+        <div class="col-12">
+            <h4 style="text-align: center; font-size: 19px; margin-top: 10px;    color: #a70a0a;">Create Job Alert
+            </h4>
+        </div>
+
+
+        <div class="tab-content" style="margin: 0; padding: 0px">
+            <div #page1 id="menu0" class="container tab-pane active">
+                <br />
+                <div class="col-12">
+                    <div class="form_controller">
+                        <form [formGroup]="JobAlertForm">
+                            <div class="row">
+                              
+                                <div class="form_singlerow">
+                                    <label for="categoryImage">keyskill: <span class="required">*</span></label>
+                                    <input type="text" id="categoryImage" formControlName="keyskillSet" (keyup)="key_skils($event,'keyskillSet')"
+                                 
+                                       />
+                                </div>
+
+                                <div class="row align-items-start">
+                                    <span style="color: red;
+                                    text-align: center;
+                                    margin-left: 18px;
+                                    margin-top: -11px;"
+                                        *ngIf="formsubmited && JobAlertForm.get('keyskillSet')?.invalid">Enter
+                                        the keyskill</span>
+                                </div>
+                                
+                                <div style="margin-bottom: 26px;">
+                                    <label for="selectstreet" style="    margin-top: 15px;">Experience:</label>
+                                    <b><label for="selectstreet" style="       margin-left: 62px;">Year:</label></b>
+                                    <select id="year" name="year" formControlName="experienceYeaSet"
+                                        style="margin-left: 11px;">
+                                        <option [ngValue]="null" disabled selected>year</option>
+                                        <option value="00">0</option>
+                                        <option value="1">1 year</option>
+                                        <option value="2">2 year</option>
+                                        <option value="3">3 year</option>
+                                        <option value="4">4 year</option>
+                                        <option value="5">5 year</option>
+                                        <option value="6">6 year</option>
+                                        <option value="7">7 year</option>
+                                        <option value="8">8 year</option>
+                                        <option value="9">9 year</option>
+                                        <option value="10">10 year</option>
+                                        <option value="11">11 year</option>
+                                        <option value="12">12 year</option>
+                                        <option value="13">13 year</option>
+                                        <option value="14">14 year</option>
+                                        <option value="15">15 year</option>
+                                        <option value="16">16 year</option>
+                                        <option value="17">17 year</option>
+                                        <option value="18">18 year</option>
+                                        <option value="19">19 year</option>
+                                        <option value="20">20 year</option>
+                                        <option value="21">21 year</option>
+                                        <option value="22">22 year</option>
+                                        <option value="23">23 year</option>
+                                        <option value="24">24 year</option>
+                                        <option value="25">25 year</option>
+                                        <option value="26">26 year</option>
+
+
+                                    </select>
+                                    <b><label for="selectstreet">Month:</label></b>
+                                    <select id="year" name="year" formControlName="experienceMonthSet"
+                                        style="    margin-left: 5px;">
+                                        <option [ngValue]="null" disabled selected>Month</option>
+                                        <option value="00">0</option>
+                                        <option value="1">1 </option>
+                                        <option value="2">2 </option>
+                                        <option value="3">3 </option>
+                                        <option value="4">4 </option>
+                                        <option value="5">5 </option>
+                                        <option value="6">6 </option>
+                                        <option value="7">7 </option>
+                                        <option value="8">8 </option>
+                                        <option value="9">9 </option>
+                                        <option value="10">10 </option>
+                                        <option value="11">11 </option>
+
+
+
+                                    </select>
+                                </div>
+
+                                <div class="row align-items-start">
+                                    <span style="color: red;
+                                    text-align: center;
+                                    margin-left: 32px;
+                                    margin-top: 3px;"
+                                        *ngIf="formsubmited && JobAlertForm.get('experienceYeaSet')?.invalid && JobAlertForm.get('experienceMonthSet')?.valid">
+                                        Enter Experinece From</span>
+                                        <span style="color: red;
+                                        text-align: center;
+                                        margin-left: 32px;
+                                        margin-top: 3px;"
+                                        *ngIf="formsubmited && JobAlertForm.get('experienceMonthSet')?.invalid && JobAlertForm.get('experienceYeaSet')?.valid">Enter
+                                         Experinece Month</span>
+                                </div>
+                                <!-- <div class="row align-items-start">
+                                    <span style="color: red;
+                                    text-align: center;
+                                    margin-left: 17px;
+    margin-top: 8px;"
+                                        *ngIf="formsubmited && JobAlertForm.get('keyskillSet')?.invalid">Enter
+                                        the keyskill</span>
+                                </div> -->
+                                
+                                <div class="form_singlerow">
+                                    <label for="categoryImage">Location: <span class="required">*</span></label>
+                                    <input type="text" id="categoryImage" formControlName="locationSet">
+                                </div>
+                                <!-- <div class="row align-items-start">
+                                    <span style="color: red;
+                                    text-align: center;
+                                    margin-left: 32px;
+                                    margin-top: -11px;"
+                                        *ngIf="formsubmited && JobAlertForm.get('locationSet')?.invalid">Enter
+                                        the Location</span>
+                                </div> -->
+                        
+
+                                
+                                <button style="padding: 0px 6px; margin-left: 41%; width: 80px;margin-top: 20px"
+                                    class="btn btn-primary" (click)="submit()">Create Alert</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

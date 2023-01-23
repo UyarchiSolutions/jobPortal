@@ -1,0 +1,189 @@
+<app-employerside-bar></app-employerside-bar>
+<!DOCTYPE html>
+<!-- Created By CodingLab - www.codinglabweb.com -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+   
+  
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body style="    width: 100%;">
+  <div class="container" style="    margin-left: 32%;">
+    <div class="title">Search Candidate</div>
+    <div class="content">
+      <form [formGroup]="searchForm">
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">KeySkills</span>
+            <input type="text" placeholder="Enter your name" formControlName="keyskill"  required>
+          </div>
+          <div class="input-box">
+            <span class="details">Any Keywords</span>
+            <input type="text" placeholder="Enter your username" formControlName="anyKeywords" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Total Experiencece(From Year)</span>
+            <input type="text" placeholder="From Year" formControlName="experienceMonthFrom" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Total Experiencece(To Year)</span>
+            <input type="text" placeholder="To Year" formControlName="experienceMonthTo" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Annual Salary(From)</span>
+            <input type="text" placeholder="From"  formControlName="salaryFrom" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Annual Salary(To)</span>
+            <input type="text" placeholder="To" formControlName="salaryTo" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Current Location</span>
+            <input type="text" placeholder="Location" formControlName="locationCurrent" required>
+          </div>
+    <!-- <div class="gender-details">
+          <input type="radio" name="gender" id="dot-1" value="anyug">
+          <input type="radio" name="gender" id="dot-2"  value="SpecificUG">
+          <input type="radio" name="gender" id="dot-3"  value="AnyPG">
+          <input type="radio" name="gender" id="dot-4"  value="SpecificPG">
+          
+          <b><span class="details">Educational Details</span></b>
+          <div class="category">
+            <label for="dot-1">
+            <span class="dot one"></span>
+            <span class="gender">Any UG</span>
+          </label>
+          <label for="dot-2">
+            <span class="dot two"></span>
+            <span class="gender">Specific UG</span>
+          </label>
+        
+          </div>
+
+          <div class="category">
+            <label for="dot-3">
+            <span class="dot Three"></span>
+            <span class="gender">Any PG</span>
+          </label>
+          <label for="dot-4">
+            <span class="dot four"></span>
+            <span class="gender">Specific PG</span>
+          </label>
+        
+          </div>
+        </div> -->
+
+        <div class="gender-details">
+            <input type="radio" name="gender" id="dot-1" value="UG"  formControlName="EducationalType" (change)="selectvalue($event)">
+            <input type="radio" name="gender" id="dot-2"  value="PG" formControlName="EducationalType" (change)="selectvalue($event)">
+          
+            
+            <b><span class="details" style="    color: #54c1e6;">Educational Details</span></b>
+            <div class="category" style="    margin-right: 57px;" >
+              <label for="dot-1">
+              <span class="dot one"></span>
+              <span class="gender">Any UG</span>
+            </label>
+            <label for="dot-2">
+              <span class="dot two"></span>
+              <span class="gender">Any PG</span>
+            </label>
+            </div>
+          </div>
+          <div class="input-box"  *ngIf="selectvaluedata =='UG'">
+            <span class="details">University Name</span>
+            <input type="text" placeholder="To" formControlName="university" required>
+          </div>
+          <div class="input-box"  *ngIf="selectvaluedata =='UG'">
+            <span class="details">Education</span>
+            <input type="text" placeholder="To" formControlName="courseType" required>
+          </div>
+          <div class="input-box"  *ngIf="selectvaluedata =='UG'">
+            <span class="details">Year Of Passing</span>
+            <input type="text" placeholder="From" formControlName="passingYearFrom" required>
+          </div>
+          <div class="input-box"  *ngIf="selectvaluedata =='UG'">
+            <span class="details">Year Of Passing</span>
+            <input type="text" placeholder="To" formControlName="passingYearTo" required>
+          </div>
+          <div class="input-box"  *ngIf="selectvaluedata =='UG'">
+            <span class="details">Specification</span>
+            <input type="text" placeholder="Specification" formControlName="specification" required>
+          </div>
+          <!---->
+          <div class="input-box"  *ngIf="selectvaluedata =='PG'">
+            <span class="details">University Name</span>
+            <input type="text" placeholder="To" formControlName="university" required>
+          </div>
+          <div class="input-box"  *ngIf="selectvaluedata =='PG'">
+            <span class="details">Education</span>
+            <input type="text" placeholder="To" formControlName="courseType" required>
+          </div>
+          <div class="input-box"  *ngIf="selectvaluedata =='PG'">
+            <span class="details">Year Of Passing</span>
+            <input type="text" placeholder="To" formControlName="passingYearFrom" required>
+          </div>
+          <div class="input-box"  *ngIf="selectvaluedata =='PG'">
+            <span class="details">Year Of Passing</span>
+            <input type="text" placeholder="From" formControlName="passingYearTo" required>
+          </div>
+          <div class="input-box"  *ngIf="selectvaluedata =='PG'">
+            <span class="details">Specification</span>
+            <input type="text" placeholder="To" formControlName="specification" required>
+          </div>
+
+
+            <div class="gender-details">
+                <input type="radio" name="search" id="dot-7" value="candidate" formControlName="">
+                <input type="radio" name="search" id="dot-8"  value="Registration" formControlName="">
+                <input type="radio" name="search" id="dot-3" value="Modified" formControlName="">
+                <input type="radio" name="search" id="dot-4"  value="VerifiedMob" formControlName="">
+                <input type="radio" name="search" id="dot-5" value="VerifiedEmail" formControlName="" >
+                <input type="radio" name="search" id="dot-6"  value="resume" formControlName="">
+              
+                
+                <b><span class="details" style="    color: #54c1e6;">Display Details</span></b>
+                <div class="category" style="    margin-right: 57px;" >
+                  <label for="dot-7">
+                  <span class="dot one"></span>
+                  <span class="gender">All Candidate</span>
+                </label>
+                <label for="dot-8">
+                  <span class="dot two"></span>
+                  <span class="gender">New Registration</span>
+                </label>
+                <label for="dot-3">
+                    <span class="dot two"></span>
+                    <span class="gender">Modified Candidates </span>
+                  </label>
+                  <label for="dot-4">
+                    <span class="dot two"></span>
+                    <span class="gender">Verified Mobile No</span>
+                  </label>
+                  <label for="dot-5">
+                    <span class="dot two"></span>
+                    <span class="gender">Verified Email</span>
+                  </label>
+                  <label for="dot-6">
+                    <span class="dot two"></span>
+                    <span class="gender">Attached Resume</span>
+                  </label>
+                </div>
+              </div>
+        </div>
+
+        
+
+    
+      
+        <button style="padding: 0px 6px; margin-left: 41%; width: 80px;margin-top: 20px"
+                                    class="btn btn-primary" (click)="submit()">Save Search</button>
+                                    <button style="padding: 0px 6px; margin-left: 41%; width: 80px;margin-top: 20px"
+                                    class="btn btn-primary" (click)="Search()">Search</button>
+      </form>
+    </div>
+  </div>
+
+</body>
+</html>
